@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cajgosu4hryie" path="res://Scenes/obstacles/blue_obstacle_1.tscn" id="9_hy3pq"]
 [ext_resource type="PackedScene" uid="uid://by05f6o3gcv86" path="res://Scenes/circles/blue_circle.tscn" id="10_ai5tx"]
 [ext_resource type="PackedScene" uid="uid://bx7djgxnvn51l" path="res://Scenes/obstacles/red_obstacle_1.tscn" id="11_btxna"]
-[ext_resource type="PackedScene" uid="uid://dlqyyef6jxlbt" path="res://Scenes/enemies/enemy_blue_bird.tscn" id="11_meiaf"]
 [ext_resource type="PackedScene" uid="uid://c5dgwcln8hykr" path="res://Scenes/obstacles/blue_obstacle_2.tscn" id="11_qequx"]
 [ext_resource type="PackedScene" uid="uid://umsr1bnvaxqd" path="res://Scenes/obstacles/yellow_obstacle_1.tscn" id="12_duc3a"]
 [ext_resource type="PackedScene" uid="uid://2mld3533hqhb" path="res://Scenes/traps/moving_rock.tscn" id="12_kw6cb"]
@@ -24,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dk44havo7jokk" path="res://Scenes/enemies/enemy_rino.tscn" id="15_7rk1p"]
 [ext_resource type="PackedScene" uid="uid://dvpfombbd4h53" path="res://Scenes/enemies/enemy_pig.tscn" id="16_jbxxx"]
 [ext_resource type="PackedScene" uid="uid://cpwbhyuknm0py" path="res://Scenes/extra/end_checkpoint.tscn" id="17_2wwbv"]
+[ext_resource type="PackedScene" uid="uid://crlw8v62anylg" path="res://Scenes/enemies/enemy_bee.tscn" id="18_jodyk"]
 [ext_resource type="FontFile" uid="uid://daihrgaf846ud" path="res://LeapNight Assets/Fonts/upheavtt.ttf" id="18_klkrs"]
 [ext_resource type="Texture2D" uid="uid://bn7geagmtnstt" path="res://LeapNight Assets/Sprites/Items/Fruits/Fruit.png" id="19_2kyel"]
 [ext_resource type="PackedScene" uid="uid://0sgh1gnfbc03" path="res://Scenes/circles/red_circle.tscn" id="24_68wwg"]
@@ -84,7 +84,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
-position = Vector2(130, 380)
+position = Vector2(133, -392)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0
@@ -282,16 +282,15 @@ move_speed = 0.45
 
 [node name="FruitBanana" parent="Floor_5/Path2D3/CustomPathFollow" unique_id=1702560587 instance=ExtResource("7_7trcl")]
 
-[node name="Path2D4" type="Path2D" parent="Floor_5" unique_id=840975038]
-position = Vector2(0, 87)
+[node name="Path2D5" type="Path2D" parent="Floor_5" unique_id=183522120]
+position = Vector2(0, 127)
 curve = SubResource("Curve2D_5l446")
 
-[node name="CustomPathFollow" parent="Floor_5/Path2D4" unique_id=1762851641 instance=ExtResource("9_5l446")]
+[node name="CustomPathFollow" parent="Floor_5/Path2D5" unique_id=1741294999 instance=ExtResource("9_5l446")]
 position = Vector2(51, -575)
 move_speed = 0.3
 
-[node name="EnemyBlueBird" parent="Floor_5/Path2D4/CustomPathFollow" unique_id=2049950902 node_paths=PackedStringArray("path") instance=ExtResource("11_meiaf")]
-collision_layer = 1
+[node name="EnemyBee" parent="Floor_5/Path2D5/CustomPathFollow" unique_id=1000112810 node_paths=PackedStringArray("path") instance=ExtResource("18_jodyk")]
 path = NodePath("..")
 
 [node name="Floor_6" type="Node2D" parent="." unique_id=520859245]

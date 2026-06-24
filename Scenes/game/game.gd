@@ -7,6 +7,7 @@ class_name Game
 @onready var game_won_panel: Panel = %GameWonPanel
 @onready var points_label: Label = %Points
 
+var health_points: int = 10
 var points: int
 var checkpoint_reached: bool
 
@@ -15,6 +16,7 @@ func _ready() -> void:
 	EventManager.on_fruit_collected.connect(_on_fruit_collected)
 	EventManager.on_checkpoint_reached.connect(_on_checkpoint_reached)
 	EventManager.on_game_won.connect(_on_game_won)
+	EventManager.on_player_damage.connect(_on_player_damage)
 	
 	
 func get_respawn_pos() -> Vector2:
@@ -22,7 +24,15 @@ func get_respawn_pos() -> Vector2:
 		return checkpoint_respawn_pos.position
 	else:
 		return spawn_pos.position
-	
+
+func _on_player_damage(damage) -> void:
+	health_points -=damage
+	player.player_damage()
+	if health_points <= 0:
+		health_points = 0
+		_on_player_dead()
+	print("health_points ", health_points)
+
 func _on_player_dead() -> void:
 	player.player_dead()
 	await get_tree().create_timer(0.5).timeout

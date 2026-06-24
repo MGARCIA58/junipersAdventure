@@ -14,6 +14,7 @@ class_name Player
 var jumps_left : int
 var move_direction := 1
 var can_move := true
+var taking_damage := false
 
 func _ready() -> void:
 	jumps_left = max_jumps
@@ -28,6 +29,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func handle_movement() -> void:
+	if taking_damage:
+		return
 	#velocity.x = move_direction * max_speed
 	var direction = Input.get_axis("keyboard_left", "keyboard_right")
 	if direction:
@@ -37,8 +40,11 @@ func handle_movement() -> void:
 		velocity.x = move_toward(velocity.x, 0, max_speed)
 
 	if is_on_floor():
-		anim_sprite.play("run")
-		jumps_left = max_jumps
+		if abs(velocity.x) > 1:
+			anim_sprite.play("run")
+		else:
+			anim_sprite.play("idle")
+	jumps_left = max_jumps
 		
 func handle_gravity(delta: float) -> void:
 	if not  is_on_floor():
@@ -89,6 +95,15 @@ func player_dead() -> void:
 	velocity = Vector2.ZERO
 	anim_sprite.play("dead")
 	collision_shape_2d.set_deferred("disabled",true)
+	
+func player_damage() -> void:
+	if taking_damage:
+		return
+	taking_damage = true
+	anim_sprite.play("hit")
+	await anim_sprite.animation_finished
+
+	taking_damage = false
 	
 func player_respawn() -> void:
 	anim_sprite.play("respawn")
