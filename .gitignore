@@ -1,0 +1,64 @@
+# ----------------------------------------------------------------------
+# Archivos específicos de Godot
+# ----------------------------------------------------------------------
+# Carpeta de caché e importación interna (Godot 4.x)
+.godot/
+
+# Carpeta de importación interna (Godot 3.x - por si acaso)
+.import/
+
+# Archivos de importación individuales (¡No los ignores!)
+# Godot necesita los archivos .import para saber cómo cargar los assets.
+# Descomenta la siguiente línea SOLO si prefieres no subirlos, aunque se recomienda subirlos:
+# *.import
+
+# Configuración de exportación (contiene contraseñas o rutas locales de exportación)
+export_presets.cfg
+
+# ----------------------------------------------------------------------
+# Builds y binarios exportados
+# ----------------------------------------------------------------------
+# Si creas una carpeta "builds" o "dist" para tus juegos exportados
+/builds/
+/dist/
+*.html
+*.js
+*.wasm
+*.pck
+*.apk
+*.aab
+*.exe
+*.zip
+
+# ----------------------------------------------------------------------
+# Soporte para C# / Mono (Si usan C# en el proyecto)
+# ----------------------------------------------------------------------
+.mono/
+data_*/
+mono_crash_*.json
+*.csproj
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.dll
+*.pdb
+*.ide/
+
+# ----------------------------------------------------------------------
+# Editores de Código y Sistema Operativo
+# ----------------------------------------------------------------------
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# Android Studio / Gradle
+.gradle/
+local.properties
+
+# Archivos del Sistema
+.DS_Store
+Thumbs.db
