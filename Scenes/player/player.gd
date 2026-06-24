@@ -28,7 +28,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func handle_movement() -> void:
-	velocity.x = move_direction * max_speed
+	#velocity.x = move_direction * max_speed
+	var direction = Input.get_axis("keyboard_left", "keyboard_right")
+	if direction:
+		change_direction(direction)
+		velocity.x = move_toward(velocity.x, direction * max_speed, max_speed * 10)
+	else:
+		velocity.x = move_toward(velocity.x, 0, max_speed)
+
 	if is_on_floor():
 		anim_sprite.play("run")
 		jumps_left = max_jumps
@@ -45,10 +52,14 @@ func handle_wall_collision() -> void:
 	jumps_left = max_jumps
 	anim_sprite.play("fall")
 	
-	if is_on_floor():
-		change_direction()
+	#if is_on_floor():
+		#change_direction()
 		
-func change_direction() -> void:
+func change_direction(direction) -> void:
+	move_direction = direction
+	visuals.scale.x = direction
+	
+func change_direction_jump() -> void:
 	move_direction *= -1
 	visuals.scale.x *= -1
 
@@ -57,7 +68,7 @@ func hande_jump_input() -> void:
 		return
 	
 	if ray_cast.is_colliding():
-		change_direction()
+		change_direction_jump()
 		jump()
 	else:
 		jump()
