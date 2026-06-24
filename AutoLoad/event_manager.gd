@@ -4,3 +4,6 @@ signal on_player_dead
 signal on_fruit_collected
 signal on_checkpoint_reached
 signal on_game_won
+signal rotate_blue_obstacles
+signal rotate_red_obstacles
+signal rotate_yellow_obstacles

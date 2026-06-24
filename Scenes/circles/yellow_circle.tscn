@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://j12jir3jee6"]
+
+[ext_resource type="Script" uid="uid://boymlklmab0ts" path="res://Scenes/circles/yellow_circle.gd" id="1_4aucl"]
+[ext_resource type="Texture2D" uid="uid://bvuqft53ulhb0" path="res://LeapNight Assets/Sprites/Traps/Spiked Ball/Spiked Ball.png" id="2_73q1r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2s7wh"]
+radius = 33.01515
+
+[node name="YellowCircle" type="Node2D" unique_id=287272170]
+script = ExtResource("1_4aucl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=167555380]
+scale = Vector2(2.84, 2.84)
+texture = ExtResource("2_73q1r")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=920620363]
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=823188375]
+shape = SubResource("CircleShape2D_2s7wh")
+debug_color = Color(0.64431715, 0.5231368, 0, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -10,15 +10,24 @@
 [ext_resource type="PackedScene" uid="uid://e2tolr6hq4jv" path="res://Scenes/fruits/fruit_banana.tscn" id="7_7trcl"]
 [ext_resource type="PackedScene" uid="uid://bdkxw7iiyctgg" path="res://Scenes/traps/spikes.tscn" id="8_nds08"]
 [ext_resource type="PackedScene" uid="uid://cnufxctdb24k2" path="res://Scenes/extra/custom_path_follow.tscn" id="9_5l446"]
+[ext_resource type="PackedScene" uid="uid://cajgosu4hryie" path="res://Scenes/obstacles/blue_obstacle_1.tscn" id="9_hy3pq"]
+[ext_resource type="PackedScene" uid="uid://by05f6o3gcv86" path="res://Scenes/circles/blue_circle.tscn" id="10_ai5tx"]
+[ext_resource type="PackedScene" uid="uid://bx7djgxnvn51l" path="res://Scenes/obstacles/red_obstacle_1.tscn" id="11_btxna"]
 [ext_resource type="PackedScene" uid="uid://dlqyyef6jxlbt" path="res://Scenes/enemies/enemy_blue_bird.tscn" id="11_meiaf"]
+[ext_resource type="PackedScene" uid="uid://c5dgwcln8hykr" path="res://Scenes/obstacles/blue_obstacle_2.tscn" id="11_qequx"]
+[ext_resource type="PackedScene" uid="uid://umsr1bnvaxqd" path="res://Scenes/obstacles/yellow_obstacle_1.tscn" id="12_duc3a"]
 [ext_resource type="PackedScene" uid="uid://2mld3533hqhb" path="res://Scenes/traps/moving_rock.tscn" id="12_kw6cb"]
+[ext_resource type="PackedScene" uid="uid://cnv3t7q0g7j6d" path="res://Scenes/obstacles/red_obstacle_2.tscn" id="13_5mbx8"]
 [ext_resource type="PackedScene" uid="uid://dt17w6fr17wmh" path="res://Scenes/extra/checkpoint.tscn" id="13_ii7ab"]
 [ext_resource type="PackedScene" uid="uid://dynbmbb6hlapb" path="res://Scenes/traps/spike_ball.tscn" id="14_hxkax"]
+[ext_resource type="PackedScene" uid="uid://xugptf4kycjl" path="res://Scenes/obstacles/yellow_obstacle_2.tscn" id="14_jodyk"]
 [ext_resource type="PackedScene" uid="uid://dk44havo7jokk" path="res://Scenes/enemies/enemy_rino.tscn" id="15_7rk1p"]
 [ext_resource type="PackedScene" uid="uid://dvpfombbd4h53" path="res://Scenes/enemies/enemy_pig.tscn" id="16_jbxxx"]
 [ext_resource type="PackedScene" uid="uid://cpwbhyuknm0py" path="res://Scenes/extra/end_checkpoint.tscn" id="17_2wwbv"]
 [ext_resource type="FontFile" uid="uid://daihrgaf846ud" path="res://LeapNight Assets/Fonts/upheavtt.ttf" id="18_klkrs"]
 [ext_resource type="Texture2D" uid="uid://bn7geagmtnstt" path="res://LeapNight Assets/Sprites/Items/Fruits/Fruit.png" id="19_2kyel"]
+[ext_resource type="PackedScene" uid="uid://0sgh1gnfbc03" path="res://Scenes/circles/red_circle.tscn" id="24_68wwg"]
+[ext_resource type="PackedScene" uid="uid://j12jir3jee6" path="res://Scenes/circles/yellow_circle.tscn" id="26_yl8fu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0b77"]
 shader = ExtResource("1_g0siu")
@@ -176,6 +185,27 @@ position = Vector2(-25, 13)
 
 [node name="FruitBanana4" parent="Floor_2" unique_id=618909715 instance=ExtResource("7_7trcl")]
 position = Vector2(25, 13)
+
+[node name="BlueObstacle1" parent="Floor_2" unique_id=1299315140 instance=ExtResource("9_hy3pq")]
+
+[node name="BlueObstacle2" parent="Floor_2" unique_id=1075731253 instance=ExtResource("9_hy3pq")]
+position = Vector2(-4, 0)
+rotation = 1.5707964
+
+[node name="BlueObstacle3" parent="Floor_2" unique_id=1660435482 instance=ExtResource("11_qequx")]
+position = Vector2(-115, -116)
+
+[node name="RedObstacle1" parent="Floor_2" unique_id=1102420997 instance=ExtResource("11_btxna")]
+position = Vector2(0, -117)
+
+[node name="YellowObstacle1" parent="Floor_2" unique_id=1635228407 instance=ExtResource("12_duc3a")]
+position = Vector2(-68, -221)
+
+[node name="RedObstacle2" parent="Floor_2" unique_id=432624500 instance=ExtResource("13_5mbx8")]
+position = Vector2(30, 90)
+
+[node name="YellowObstacle2" parent="Floor_2" unique_id=1149898542 instance=ExtResource("14_jodyk")]
+position = Vector2(-124, 80)
 
 [node name="Floor_3" type="Node2D" parent="." unique_id=1366972042]
 
@@ -447,5 +477,16 @@ offset_bottom = 41.0
 text = "0"
 label_settings = SubResource("LabelSettings_ai5tx")
 vertical_alignment = 1
+
+[node name="Circles" type="Node2D" parent="." unique_id=145756341]
+
+[node name="BlueCircle" parent="Circles" unique_id=287272170 instance=ExtResource("10_ai5tx")]
+position = Vector2(47, 460)
+
+[node name="RedCircle" parent="Circles" unique_id=1652427028 instance=ExtResource("24_68wwg")]
+position = Vector2(130, 461)
+
+[node name="YellowCircle" parent="Circles" unique_id=2066273782 instance=ExtResource("26_yl8fu")]
+position = Vector2(215, 460)
 
 [connection signal="pressed" from="GameUI/GameWonPanel/PlayButton" to="." method="_on_play_button_pressed"]
