@@ -478,15 +478,16 @@ text = "0"
 label_settings = SubResource("LabelSettings_ai5tx")
 vertical_alignment = 1
 
-[node name="Circles" type="Node2D" parent="." unique_id=145756341]
+[node name="Circles" type="Node2D" parent="GameUI" unique_id=145756341]
+position = Vector2(1, -23)
 
-[node name="BlueCircle" parent="Circles" unique_id=287272170 instance=ExtResource("10_ai5tx")]
+[node name="BlueCircle" parent="GameUI/Circles" unique_id=287272170 instance=ExtResource("10_ai5tx")]
 position = Vector2(47, 460)
 
-[node name="RedCircle" parent="Circles" unique_id=1652427028 instance=ExtResource("24_68wwg")]
+[node name="RedCircle" parent="GameUI/Circles" unique_id=1652427028 instance=ExtResource("24_68wwg")]
 position = Vector2(130, 461)
 
-[node name="YellowCircle" parent="Circles" unique_id=2066273782 instance=ExtResource("26_yl8fu")]
+[node name="YellowCircle" parent="GameUI/Circles" unique_id=2066273782 instance=ExtResource("26_yl8fu")]
 position = Vector2(215, 460)
 
 [connection signal="pressed" from="GameUI/GameWonPanel/PlayButton" to="." method="_on_play_button_pressed"]

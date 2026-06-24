@@ -6,6 +6,7 @@
 
 [node name="CollisionShape2D2" parent="." index="1" unique_id=1986252077]
 visible = false
+disabled = true
 
 [node name="TileMapLayer" parent="." index="2" unique_id=200504031]
 tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgABAAAAAAACAAAAAgABAAAAAAADAAAAAgABAAAAAAAEAAAAAgABAAAAAAAFAAAAAgABAAAAAAAGAAAAAgAFAAAAAAA=")
