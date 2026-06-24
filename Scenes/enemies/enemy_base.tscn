@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b5vhy4edq18ys"]
+
+[node name="EnemyBase" type="CharacterBody2D" unique_id=2049950902]
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=256750072]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536195167]
+
+[node name="TopArea" type="Area2D" parent="." unique_id=721540412]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea" unique_id=966509429]
+
+[node name="BottomArea" type="Area2D" parent="." unique_id=1198043486]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea" unique_id=1196295185]

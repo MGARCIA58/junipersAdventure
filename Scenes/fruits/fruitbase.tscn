@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://pl3ownbbuva5"]
+
+[ext_resource type="Script" uid="uid://ciy87j33oe4m1" path="res://Scenes/fruits/fruit.gd" id="1_wl6vn"]
+
+[node name="Fruitbase" type="Area2D" unique_id=445725208]
+collision_layer = 8
+script = ExtResource("1_wl6vn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=796211474]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1374737836]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1117978274]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

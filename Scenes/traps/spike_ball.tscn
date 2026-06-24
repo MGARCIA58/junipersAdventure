@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dynbmbb6hlapb"]
+
+[ext_resource type="Script" uid="uid://dpwvnknjw2mb3" path="res://Scenes/traps/spike_ball.gd" id="1_jvy2h"]
+[ext_resource type="Texture2D" uid="uid://vdvacswb685p" path="res://LeapNight Assets/Sprites/Traps/Spiked Ball/Chain.png" id="2_a725q"]
+[ext_resource type="Texture2D" uid="uid://bvuqft53ulhb0" path="res://LeapNight Assets/Sprites/Traps/Spiked Ball/Spiked Ball.png" id="3_a725q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a725q"]
+radius = 11.0
+
+[node name="SpikeBall" type="Area2D" unique_id=378150847]
+collision_layer = 0
+script = ExtResource("1_jvy2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1344997350]
+position = Vector2(0, 27)
+texture = ExtResource("2_a725q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1516281874]
+position = Vector2(0, 11)
+texture = ExtResource("2_a725q")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1056323454]
+position = Vector2(0, 19)
+texture = ExtResource("2_a725q")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1832696156]
+position = Vector2(0, 35)
+texture = ExtResource("2_a725q")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=2003737791]
+position = Vector2(0, 43)
+texture = ExtResource("2_a725q")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=429245255]
+position = Vector2(0, 51)
+texture = ExtResource("2_a725q")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=78194085]
+position = Vector2(0, 59)
+texture = ExtResource("2_a725q")
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=480014215]
+position = Vector2(0, 67)
+texture = ExtResource("2_a725q")
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=1295290572]
+position = Vector2(0, 85)
+texture = ExtResource("3_a725q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=444789058]
+position = Vector2(0, 85)
+shape = SubResource("CircleShape2D_a725q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

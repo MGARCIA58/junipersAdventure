@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://2mld3533hqhb"]
+
+[ext_resource type="Texture2D" uid="uid://bdrqd5mopxeup" path="res://LeapNight Assets/Sprites/Traps/Rock Head/Bottom Hit (42x42).png" id="1_6ler5"]
+[ext_resource type="Script" uid="uid://grfb66umpq6j" path="res://Scenes/traps/moving_rock.gd" id="1_63q06"]
+[ext_resource type="Texture2D" uid="uid://b1wjmxwdgvywl" path="res://LeapNight Assets/Sprites/Traps/Rock Head/Idle.png" id="2_63q06"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8q65"]
+atlas = ExtResource("1_6ler5")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rmwq"]
+atlas = ExtResource("1_6ler5")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmko5"]
+atlas = ExtResource("1_6ler5")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8prve"]
+atlas = ExtResource("1_6ler5")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trbkc"]
+atlas = ExtResource("2_63q06")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3jpu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8q65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rmwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmko5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8prve")
+}],
+"loop": false,
+"name": &"bottom_hit",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trbkc")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63q06"]
+size = Vector2(34, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27wym"]
+size = Vector2(32, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1toe"]
+size = Vector2(34, 5)
+
+[node name="MovingRock" type="StaticBody2D" unique_id=139595143]
+collision_layer = 4
+script = ExtResource("1_63q06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=95473849]
+sprite_frames = SubResource("SpriteFrames_q3jpu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=616092478]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_63q06")
+debug_color = Color(1.92523e-06, 0.56104165, 0.6569381, 0.41960785)
+
+[node name="ActionArea" type="Area2D" parent="." unique_id=929956979]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea" unique_id=62736013]
+position = Vector2(0, 40.5)
+shape = SubResource("RectangleShape2D_27wym")
+debug_color = Color(0.13840881, 0.6464059, 0, 0.41960785)
+
+[node name="KillArea" type="Area2D" parent="." unique_id=1844486838]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea" unique_id=1684597026]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_w1toe")
+debug_color = Color(1, 0.0069555193, 0.07654018, 0.41960785)
+
+[connection signal="body_entered" from="ActionArea" to="." method="_on_action_area_body_entered"]
+[connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]

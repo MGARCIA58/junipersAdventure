@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cpwbhyuknm0py"]
+
+[ext_resource type="Script" uid="uid://bjm5yuvu6dlhc" path="res://Scenes/extra/end_checkpoint.gd" id="1_dghn2"]
+[ext_resource type="Texture2D" uid="uid://ce7wdd8y1xquf" path="res://LeapNight Assets/Sprites/Items/Checkpoints/End/End (Idle).png" id="2_1xvtl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxq0r"]
+size = Vector2(46, 45)
+
+[node name="EndCheckpoint" type="Area2D" unique_id=374497132]
+script = ExtResource("1_dghn2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=188063162]
+position = Vector2(0, -33)
+texture = ExtResource("2_1xvtl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=341919617]
+position = Vector2(0, -23.5)
+shape = SubResource("RectangleShape2D_uxq0r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
