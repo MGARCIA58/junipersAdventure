@@ -53,7 +53,7 @@ func change_direction() -> void:
 	visuals.scale.x *= -1
 
 func hande_jump_input() -> void:
-	if not Input.is_action_just_pressed("tap"):
+	if not Input.is_action_just_pressed("keyboard_jump"):
 		return
 	
 	if ray_cast.is_colliding():
