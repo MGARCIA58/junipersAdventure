@@ -59,19 +59,16 @@ func _on_shooting_area_body_entered(body: Node2D) -> void:
 	body_in_area = true
 	player = body
 	timer.start()
-	print("player entro")
 
 func _on_shooting_area_body_exited(body: Node2D) -> void:
 	if not body is Player: return
 	body_in_area = false
 	timer.stop()
-	print("player salio")
 	
 
 func shoot_at_player() -> void:
 	if not body_in_area:
 		return
-	print("disparo")
 	var bullet = bee_bullet.instantiate()
 	bullet.sting_damage = sting_damage
 	get_tree().current_scene.add_child(bullet)

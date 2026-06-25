@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://crlw8v62anylg" path="res://Scenes/enemies/enemy_bee.tscn" id="18_jodyk"]
 [ext_resource type="FontFile" uid="uid://daihrgaf846ud" path="res://LeapNight Assets/Fonts/upheavtt.ttf" id="18_klkrs"]
 [ext_resource type="Texture2D" uid="uid://bn7geagmtnstt" path="res://LeapNight Assets/Sprites/Items/Fruits/Fruit.png" id="19_2kyel"]
+[ext_resource type="Script" uid="uid://bybov4xvc3au3" path="res://Scenes/extra/custom_path_follow.gd" id="20_dlt2v"]
+[ext_resource type="PackedScene" uid="uid://c8kyd1045x2nb" path="res://Scenes/enemies/enemy_bat.tscn" id="21_tawbq"]
 [ext_resource type="PackedScene" uid="uid://0sgh1gnfbc03" path="res://Scenes/circles/red_circle.tscn" id="24_68wwg"]
 [ext_resource type="PackedScene" uid="uid://j12jir3jee6" path="res://Scenes/circles/yellow_circle.tscn" id="26_yl8fu"]
 
@@ -43,6 +45,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 51, -575, 0, 0, 0, 0, 236, -575)
 }
 point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_5ub58"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -93, -46, 0, 0, 0, 0, -63, -50, 0, 0, 0, 0, -36, -39, 0, 0, 0, 0, -15, -54, 0, 0, 0, 0, 14, -39, 0, 0, 0, 0, 40, -54, 0, 0, 0, 0, 63, -39, 0, 0, 0, 0, 85, -51, 0, 0, 0, 0, 110, -39)
+}
+point_count = 9
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kyel"]
 bg_color = Color(0.09293706, 0.6851695, 0.6785446, 1)
@@ -84,7 +92,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
-position = Vector2(133, -392)
+position = Vector2(107, -912)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0
@@ -311,6 +319,19 @@ position = Vector2(129, -951)
 
 [node name="Checkpoint" parent="Floor_7" unique_id=1532762586 instance=ExtResource("13_ii7ab")]
 position = Vector2(0, 55)
+
+[node name="Path2D" type="Path2D" parent="Floor_7" unique_id=618996839]
+curve = SubResource("Curve2D_5ub58")
+
+[node name="CustomPathFollow" type="PathFollow2D" parent="Floor_7/Path2D" unique_id=1829512659]
+position = Vector2(-93, -46)
+rotation = -0.13255152
+loop = false
+script = ExtResource("20_dlt2v")
+metadata/_custom_type_script = "uid://bybov4xvc3au3"
+
+[node name="EnemyBat" parent="Floor_7/Path2D/CustomPathFollow" unique_id=2049950902 node_paths=PackedStringArray("path") instance=ExtResource("21_tawbq")]
+path = NodePath("..")
 
 [node name="Floor_8" type="Node2D" parent="." unique_id=345322163]
 position = Vector2(134, -1111)

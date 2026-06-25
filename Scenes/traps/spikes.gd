@@ -2,5 +2,4 @@ extends Area2D
 class_name  Spikes
 
 func _on_body_entered(body: Node2D) -> void:
-	
-	EventManager.on_player_dead.emit()
+	EventManager.on_player_damage.emit(2)
