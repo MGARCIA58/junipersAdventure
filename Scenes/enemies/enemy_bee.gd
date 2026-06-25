@@ -10,21 +10,34 @@ class_name EnemyBee
 @export var touch_damage = 1
 @export var bee_bullet: PackedScene
 @export var player: Node2D
+@export var fly_speed := 200.0
+enum State {
+	SPAWNING,
+	PATROL
+}
 
+var state := State.SPAWNING
 var defeated := false
 var top_jumped := false
 var bottom_touched := false
 var body_in_area := false
 
 func _ready():
-	print(timer)
-	print(timer.wait_time)
 	timer.timeout.connect(shoot_at_player)
 	
-func _process(delta: float) -> void:
-	anim_sprite.flip_h = path.direction == 1
+func _physics_process(delta):
+	match state:
+		State.SPAWNING:
+			global_position = global_position.move_toward(path.global_position,fly_speed * delta)
+			if global_position.distance_to(path.global_position) < 5:
+				path.can_move = true
+				state = State.PATROL
+		State.PATROL:
+			global_position = global_position.move_toward(path.global_position,300 * delta)
 	
-
+func set_path(new_path: CustomPathFollow):
+	path = new_path
+	
 func _on_top_area_body_entered(body: Node2D) -> void:
 	if bottom_touched:
 		return
