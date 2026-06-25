@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bpi6adi5777fc"]
+
+[ext_resource type="Texture2D" uid="uid://bl3bv6irm7jyl" path="res://LeapNight Assets/Sprites/Enemies/Plant/Bullet.png" id="1_sgbju"]
+[ext_resource type="Script" uid="uid://m4virnwjnkho" path="res://Scenes/enemies/plant_bullet.gd" id="2_rssdk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hnwec"]
+radius = 4.0
+
+[node name="PlantBullet" type="Sprite2D" unique_id=1410871483]
+texture = ExtResource("1_sgbju")
+script = ExtResource("2_rssdk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=329717280]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=791805000]
+shape = SubResource("CircleShape2D_hnwec")
+debug_color = Color(0.99806637, 0, 0.16217598, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

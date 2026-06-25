@@ -1,0 +1,58 @@
+extends CharacterBody2D
+class_name EnemyPlant
+
+@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var shooting_hole: Marker2D = $ShootingHole
+@onready var shooting_direction: Marker2D = $ShootingDirection
+@onready var timer: Timer = $Timer
+@export var health: int = 8
+@export var ball_damage = 2
+@export var touch_damage = 1
+@export var plant_bullet: PackedScene
+@export var player: Node2D
+
+var defeated := false
+var top_jumped := false
+var bottom_touched := false
+var body_in_area := false
+	
+func _on_top_area_body_entered(body: Node2D) -> void:
+	if bottom_touched:
+		return
+	if not body is Player:
+		return
+	top_jumped = true
+	anim_sprite.play("hit")
+	body.velocity.y = -400
+	health -= 1
+	await anim_sprite.animation_finished
+	#await get_tree().create_timer(0.5).timeout
+	if health <= 0:
+		defeated = true
+		queue_free()
+	top_jumped = false
+
+
+func _on_bottom_area_body_entered(body: Node2D) -> void:
+	if defeated or top_jumped:
+			return
+	if body is Player:
+		bottom_touched = true
+		EventManager.on_player_damage.emit(touch_damage)
+		await get_tree().create_timer(2).timeout
+	bottom_touched = false
+	
+func shoot() -> void:
+	var bullet = plant_bullet.instantiate()
+	bullet.ball_damage = ball_damage
+	get_tree().current_scene.add_child(bullet)
+	bullet.global_position = shooting_hole.global_position
+	var direction = (
+		shooting_direction.global_position - shooting_hole.global_position
+	).normalized()
+	bullet.initialize(direction)
+	anim_sprite.play("attack")
+
+
+func _on_timer_timeout() -> void:
+	shoot()

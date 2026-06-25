@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://c8kyd1045x2nb" path="res://Scenes/enemies/enemy_bat.tscn" id="21_tawbq"]
 [ext_resource type="PackedScene" uid="uid://0sgh1gnfbc03" path="res://Scenes/circles/red_circle.tscn" id="24_68wwg"]
 [ext_resource type="PackedScene" uid="uid://bdw71h0xlr85b" path="res://Scenes/enemies/enemy_chameleon.tscn" id="25_tawbq"]
+[ext_resource type="PackedScene" uid="uid://cvlp5dmqrsrs6" path="res://Scenes/enemies/enemy_plant.tscn" id="26_5ub58"]
 [ext_resource type="PackedScene" uid="uid://j12jir3jee6" path="res://Scenes/circles/yellow_circle.tscn" id="26_yl8fu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0b77"]
@@ -408,6 +409,9 @@ move_speed = 60
 
 [node name="EnemyChameleon" parent="Floor_10" unique_id=1386541326 instance=ExtResource("25_tawbq")]
 position = Vector2(32, 96)
+
+[node name="EnemyPlant" parent="Floor_10" unique_id=640388593 instance=ExtResource("26_5ub58")]
+position = Vector2(101, -43)
 
 [node name="Floor_11" type="Node2D" parent="." unique_id=6001495]
 position = Vector2(140, -1876)
