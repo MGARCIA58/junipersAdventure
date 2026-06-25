@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://bybov4xvc3au3" path="res://Scenes/extra/custom_path_follow.gd" id="20_dlt2v"]
 [ext_resource type="PackedScene" uid="uid://c8kyd1045x2nb" path="res://Scenes/enemies/enemy_bat.tscn" id="21_tawbq"]
 [ext_resource type="PackedScene" uid="uid://0sgh1gnfbc03" path="res://Scenes/circles/red_circle.tscn" id="24_68wwg"]
+[ext_resource type="PackedScene" uid="uid://bdw71h0xlr85b" path="res://Scenes/enemies/enemy_chameleon.tscn" id="25_tawbq"]
 [ext_resource type="PackedScene" uid="uid://j12jir3jee6" path="res://Scenes/circles/yellow_circle.tscn" id="26_yl8fu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0b77"]
@@ -92,7 +93,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
-position = Vector2(139, -305)
+position = Vector2(53, -1511)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0
@@ -404,6 +405,9 @@ position = Vector2(-45, 4)
 [node name="EnemyPig2" parent="Floor_10" unique_id=1273318346 instance=ExtResource("16_jbxxx")]
 position = Vector2(-45, -124)
 move_speed = 60
+
+[node name="EnemyChameleon" parent="Floor_10" unique_id=1386541326 instance=ExtResource("25_tawbq")]
+position = Vector2(32, 96)
 
 [node name="Floor_11" type="Node2D" parent="." unique_id=6001495]
 position = Vector2(140, -1876)
