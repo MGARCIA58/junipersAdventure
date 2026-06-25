@@ -92,7 +92,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
-position = Vector2(107, -912)
+position = Vector2(119, 374)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0
@@ -499,7 +499,7 @@ label_settings = SubResource("LabelSettings_ai5tx")
 vertical_alignment = 1
 
 [node name="Circles" type="Node2D" parent="GameUI" unique_id=145756341]
-position = Vector2(1, -23)
+position = Vector2(1, -15)
 
 [node name="BlueCircle" parent="GameUI/Circles" unique_id=287272170 instance=ExtResource("10_ai5tx")]
 position = Vector2(47, 460)

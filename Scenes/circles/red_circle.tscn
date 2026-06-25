@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0sgh1gnfbc03"]
 
 [ext_resource type="Script" uid="uid://dkdn014u026d0" path="res://Scenes/circles/red_circle.gd" id="1_j0mw3"]
-[ext_resource type="Texture2D" uid="uid://bvuqft53ulhb0" path="res://LeapNight Assets/Sprites/Traps/Spiked Ball/Spiked Ball.png" id="2_yjl6c"]
+[ext_resource type="Texture2D" uid="uid://pwpy2h2jigfi" path="res://LeapNight Assets/Sprites/Traps/Spiked Ball/Red_Ball.png" id="2_j0mw3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ajbui"]
 radius = 33.0
@@ -11,7 +11,7 @@ script = ExtResource("1_j0mw3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=807900494]
 scale = Vector2(2.84, 2.84)
-texture = ExtResource("2_yjl6c")
+texture = ExtResource("2_j0mw3")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1224187423]
 
