@@ -80,3 +80,4 @@ func shoot_at_player() -> void:
 	).normalized()
 
 	bullet.initialize(direction)
+	anim_sprite.play("attack")

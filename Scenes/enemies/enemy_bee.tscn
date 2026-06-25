@@ -112,7 +112,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -175,10 +175,8 @@ bee_bullet = ExtResource("3_dn0au")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=256750072]
 sprite_frames = SubResource("SpriteFrames_l6jcm")
-animation = &"hit"
+animation = &"attack"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="CollisionShape2D" parent="TopArea" parent_id_path=PackedInt32Array(721540412) index="0" unique_id=966509429]
 position = Vector2(0, -9)

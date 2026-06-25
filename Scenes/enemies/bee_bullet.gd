@@ -10,7 +10,7 @@ func _process(delta):
 	
 func initialize(dir: Vector2):
 	direction = dir
-	rotation = direction.angle()
+	#rotation = direction.angle()
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
