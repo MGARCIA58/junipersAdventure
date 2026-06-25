@@ -1,19 +1,26 @@
 extends CharacterBody2D
 class_name EnemyBee
 
+@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var shooting_hole: Marker2D = $ShootingHole
+@onready var timer: Timer = $Timer
 @export var path: CustomPathFollow
 @export var health: int = 5
 @export var sting_damage = 2
 @export var touch_damage = 1
-@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var shooting_hole: Marker2D = $ShootingHole
 @export var bee_bullet: PackedScene
-@export var player: PackedScene
+@export var player: Node2D
 
 var defeated := false
 var top_jumped := false
 var bottom_touched := false
+var body_in_area := false
 
+func _ready():
+	print(timer)
+	print(timer.wait_time)
+	timer.timeout.connect(shoot_at_player)
+	
 func _process(delta: float) -> void:
 	anim_sprite.flip_h = path.direction == 1
 	
@@ -48,7 +55,23 @@ func _on_bottom_area_body_entered(body: Node2D) -> void:
 
 func _on_shooting_area_body_entered(body: Node2D) -> void:
 	if not body is Player: return
+	if body_in_area: return
+	body_in_area = true
+	player = body
+	timer.start()
+	print("player entro")
 
+func _on_shooting_area_body_exited(body: Node2D) -> void:
+	if not body is Player: return
+	body_in_area = false
+	timer.stop()
+	print("player salio")
+	
+
+func shoot_at_player() -> void:
+	if not body_in_area:
+		return
+	print("disparo")
 	var bullet = bee_bullet.instantiate()
 	bullet.sting_damage = sting_damage
 	get_tree().current_scene.add_child(bullet)
@@ -56,8 +79,7 @@ func _on_shooting_area_body_entered(body: Node2D) -> void:
 	bullet.global_position = shooting_hole.global_position
 
 	var direction = (
-		body.global_position - shooting_hole.global_position
+		player.global_position - shooting_hole.global_position
 	).normalized()
 
 	bullet.initialize(direction)
-	

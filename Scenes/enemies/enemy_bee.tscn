@@ -164,11 +164,16 @@ size = Vector2(22, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpw2i"]
 size = Vector2(18, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjbwn"]
+size = Vector2(760, 200)
+
 [node name="EnemyBee" unique_id=2049950902 instance=ExtResource("1_fmap6")]
 script = ExtResource("2_xjbwn")
 bee_bullet = ExtResource("3_dn0au")
 
-[node name="AnimatedSprite2D" parent="." index="0" unique_id=256750072]
+[node name="Timer" type="Timer" parent="." index="0" unique_id=1602181201]
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=256750072]
 sprite_frames = SubResource("SpriteFrames_l6jcm")
 animation = &"hit"
 autoplay = "idle"
@@ -184,15 +189,16 @@ position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_xpw2i")
 debug_color = Color(0.9878958, 0, 0.3131107, 0.41960785)
 
-[node name="ShootingArea" type="Area2D" parent="." index="4" unique_id=1926088548]
+[node name="ShootingArea" type="Area2D" parent="." index="5" unique_id=1926088548]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ShootingArea" index="0" unique_id=1495814855]
-build_mode = 1
-polygon = PackedVector2Array(-13, 23, -9, 16, 9, 16, 110, 155, -108, 154)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShootingArea" index="0" unique_id=407305727]
+position = Vector2(1, 58)
+shape = SubResource("RectangleShape2D_xjbwn")
 
-[node name="ShootingHole" type="Marker2D" parent="." index="5" unique_id=209177125]
+[node name="ShootingHole" type="Marker2D" parent="." index="6" unique_id=209177125]
 position = Vector2(0, 12)
 
 [connection signal="body_entered" from="TopArea" to="." method="_on_top_area_body_entered"]
 [connection signal="body_entered" from="BottomArea" to="." method="_on_bottom_area_body_entered"]
 [connection signal="body_entered" from="ShootingArea" to="." method="_on_shooting_area_body_entered"]
+[connection signal="body_exited" from="ShootingArea" to="." method="_on_shooting_area_body_exited"]
