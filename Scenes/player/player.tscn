@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://djfb75jrgbl2h" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_fly/fly2.png" id="8_mnu3u"]
 [ext_resource type="Texture2D" uid="uid://be5cb6qahlf1u" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_idle/idle.png" id="9_h0khc"]
 [ext_resource type="Texture2D" uid="uid://dmin2vm82v2l5" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_fly/fly3.png" id="9_rwmec"]
+[ext_resource type="Texture2D" uid="uid://b66cgvppmgwjr" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_jump/hanging.png" id="10_mnu3u"]
 [ext_resource type="Texture2D" uid="uid://bowkoiex1da4d" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_jump/jump1.png" id="10_nyrd7"]
 [ext_resource type="Texture2D" uid="uid://dxg8cq12ft4lx" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_jump/jump2.png" id="11_ic3d6"]
 [ext_resource type="Texture2D" uid="uid://dlfng0d3gqyoq" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_run/run1.png" id="12_h0khc"]
@@ -138,6 +139,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_mnu3u")
+}],
+"loop": true,
+"name": &"hanging",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_dpkfr")
 }, {
 "duration": 1.0,
@@ -238,13 +247,8 @@ unique_name_in_owner = true
 position = Vector2(0, -2)
 scale = Vector2(0.5464285, 0.5464285)
 sprite_frames = SubResource("SpriteFrames_aa0hm")
-animation = &"run"
+animation = &"hanging"
 autoplay = "idle"
-
-[node name="RayCast2D" type="RayCast2D" parent="Visuals" unique_id=1147322477]
-unique_name_in_owner = true
-target_position = Vector2(12, 0)
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=410470752]
 position = Vector2(0, -12)

@@ -3,13 +3,14 @@ class_name Player
 
 @export var max_speed := 180.0
 @export var jump_force := 450.0
+@export var wall_jump_force = 550.0
 @export var max_jumps := 2
 @export var gravity := 1600.0
 @export var player_bullet: PackedScene
+@export var wall_slide_speed := 70.0
 
 @onready var visuals: Node2D = $Visuals
 @onready var anim_sprite: AnimatedSprite2D = %AnimatedSprite2D
-@onready var ray_cast: RayCast2D = %RayCast2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var shooting_hole: Marker2D = $ShootingHole
 
@@ -17,6 +18,9 @@ var jumps_left : int
 var move_direction := 1
 var can_move := true
 var taking_damage := false
+var on_wall := false
+var coyote_time = 0.12
+var coyote_timer = 0.0
 
 func _ready() -> void:
 	jumps_left = max_jumps
@@ -26,9 +30,13 @@ func _physics_process(delta: float) -> void:
 		return
 	handle_movement()
 	handle_gravity(delta)
-	handle_wall_collision()
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer -= delta
 	hande_jump_input()
 	move_and_slide()
+	handle_wall_collision()
 	handle_shoot()
 	
 func handle_movement() -> void:
@@ -47,18 +55,19 @@ func handle_movement() -> void:
 			anim_sprite.play("run")
 		else:
 			anim_sprite.play("idle")
-	jumps_left = max_jumps
+		jumps_left = max_jumps
 		
 func handle_gravity(delta: float) -> void:
 	if not  is_on_floor():
 		velocity.y += gravity * delta
 		
 func handle_wall_collision() -> void:
-	if not ray_cast.is_colliding():
-		return
-		
-	velocity.y = 50
-	jumps_left = max_jumps
+	on_wall = is_on_wall()
+	if on_wall and velocity.y > wall_slide_speed:
+		velocity.y = wall_slide_speed
+		jumps_left = max_jumps
+		anim_sprite.play("hanging")
+	
 
 		
 func handle_shoot() -> void:
@@ -77,19 +86,22 @@ func change_direction_jump() -> void:
 func hande_jump_input() -> void:
 	if not Input.is_action_just_pressed("keyboard_jump"):
 		return
-	
-	if ray_cast.is_colliding():
-		change_direction_jump()
-		jump()
-	else:
-		jump()
+	jump()
 	
 func jump() -> void:
 	if jumps_left <= 0:
 		return
-	
+	if on_wall:
+		anim_sprite.play("jump")
+		var wall_normal = get_wall_normal()
+		velocity.x = wall_normal.x * wall_jump_force
+		velocity.y = -jump_force/2
+		change_direction(sign(wall_normal.x))
+	if !is_on_floor() and coyote_timer <= 0 and jumps_left == max_jumps:
+		return
 	velocity.y = -jump_force
 	jumps_left -= 1
+	coyote_timer = 0.0
 	if jumps_left <= 0:
 		anim_sprite.play("double_jump")
 	else:

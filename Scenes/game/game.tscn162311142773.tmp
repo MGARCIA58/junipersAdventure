@@ -102,6 +102,10 @@ stretch_mode = 1
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
 position = Vector2(127, 395)
+max_speed = null
+jump_force = null
+max_jumps = null
+gravity = null
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0
@@ -181,7 +185,7 @@ shape = SubResource("RectangleShape2D_vjhi1")
 one_way_collision = true
 
 [node name="Floor_2" type="Node2D" parent="." unique_id=1452229743]
-position = Vector2(132, 129)
+position = Vector2(131, 228)
 
 [node name="SpikeBlock" parent="Floor_2" unique_id=482474566 instance=ExtResource("5_7pssd")]
 position = Vector2(-90, -43)
