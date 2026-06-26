@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://by6mwoiawct23"]
+
+[ext_resource type="Texture2D" uid="uid://6fcpdwudcqtp" path="res://LeapNight Assets/Sprites/Background/Sky5.png" id="1_6q7lm"]
+[ext_resource type="Script" uid="uid://esnwkmwkfnhi" path="res://Scenes/ui/start_screen.gd" id="1_jtk4k"]
+[ext_resource type="Shader" uid="uid://7nm5qpvliua7" path="res://Scenes/game/bg.gdshader" id="1_u6vib"]
+[ext_resource type="Texture2D" uid="uid://bo1bhmbmeo8r1" path="res://LeapNight Assets/Sprites/Menu/Buttons/A.png" id="3_mr6l3"]
+[ext_resource type="Texture2D" uid="uid://b1iecymxi1k2e" path="res://LeapNight Assets/Sprites/Menu/Buttons/D.png" id="4_2if0h"]
+[ext_resource type="Texture2D" uid="uid://dvyrsewsmmxlp" path="res://LeapNight Assets/Sprites/Menu/Buttons/MOUSEBUTTONRIGHT.png" id="5_mustv"]
+[ext_resource type="Texture2D" uid="uid://dbvhkv423cra7" path="res://LeapNight Assets/Sprites/Menu/Buttons/MOUSEBUTTONLEFT.png" id="6_jtk4k"]
+[ext_resource type="FontFile" uid="uid://daihrgaf846ud" path="res://LeapNight Assets/Fonts/upheavtt.ttf" id="7_mustv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mr6l3"]
+shader = ExtResource("1_u6vib")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_csu2t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtk4k"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="StartScreen" type="Node2D" unique_id=717364526]
+script = ExtResource("1_jtk4k")
+
+[node name="Control" type="Control" parent="." unique_id=1175368434]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="TextureRect" parent="Control" unique_id=845246649]
+modulate = Color(0.5518276, 0.5518276, 0.5518276, 1)
+material = SubResource("ShaderMaterial_mr6l3")
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2089.0
+offset_right = 313.0
+offset_bottom = 526.0
+texture = ExtResource("1_6q7lm")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1726684384]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 460.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=928139630]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 183.0
+grow_horizontal = 2
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer" unique_id=1944829369]
+custom_minimum_size = Vector2(0, 91.78)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_csu2t")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1384037983]
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 1
+
+[node name="A" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer" unique_id=944354265]
+position = Vector2(32, 15)
+scale = Vector2(1.455, 1.455)
+texture = ExtResource("3_mr6l3")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1738586945]
+layout_mode = 2
+text = "Move Left"
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer" unique_id=341257341]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_csu2t")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=800942528]
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 1
+
+[node name="A" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=869008983]
+position = Vector2(32, 15)
+scale = Vector2(1.455, 1.455)
+texture = ExtResource("4_2if0h")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=1921701524]
+layout_mode = 2
+text = "Move Right"
+
+[node name="Panel3" type="Panel" parent="Panel/VBoxContainer" unique_id=1732718711]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_csu2t")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1561034303]
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 1
+
+[node name="A" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=110384335]
+position = Vector2(32, 15)
+scale = Vector2(1.455, 1.455)
+texture = ExtResource("5_mustv")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=1119041887]
+layout_mode = 2
+text = "Shoot Apples"
+
+[node name="Panel4" type="Panel" parent="Panel/VBoxContainer" unique_id=815407213]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_csu2t")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1338843367]
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 1
+
+[node name="A" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=67046288]
+position = Vector2(32, 15)
+scale = Vector2(1.455, 1.455)
+texture = ExtResource("6_jtk4k")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=2006486777]
+layout_mode = 2
+text = "Interact with 
+something"
+
+[node name="Panel5" type="Panel" parent="Panel/VBoxContainer" unique_id=1405599871]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_csu2t")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=913015590]
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer5" unique_id=1816734165]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.036556214, 0.03655638, 0.036556244, 1)
+theme_override_fonts/font = ExtResource("7_mustv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jtk4k")
+text = "Play"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel" unique_id=1510737562]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer2" unique_id=757382052]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="A" type="Sprite2D" parent="Panel/VBoxContainer2/Panel" unique_id=1006541828]
+position = Vector2(32, 15)
+scale = Vector2(1.455, 1.455)
+texture = ExtResource("3_mr6l3")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer2/Panel" unique_id=2117010496]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.5
+offset_right = 38.5
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Move Left"
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer2" unique_id=772399209]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="A" type="Sprite2D" parent="Panel/VBoxContainer2/Panel2" unique_id=626230500]
+position = Vector2(32, 15)
+scale = Vector2(1.455, 1.455)
+texture = ExtResource("3_mr6l3")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer2/Panel2" unique_id=778445034]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.5
+offset_right = 38.5
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Move Left"
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer5/PlayButton" to="." method="_on_play_button_pressed"]

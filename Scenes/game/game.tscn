@@ -308,6 +308,7 @@ position = Vector2(51, -575)
 move_speed = 0.3
 
 [node name="EnemyBee" parent="Floor_5/Path2D5/CustomPathFollow" unique_id=1000112810 node_paths=PackedStringArray("path") instance=ExtResource("18_jodyk")]
+collision_mask = 6
 path = NodePath("..")
 
 [node name="Floor_6" type="Node2D" parent="." unique_id=520859245]
@@ -340,6 +341,7 @@ script = ExtResource("20_dlt2v")
 metadata/_custom_type_script = "uid://bybov4xvc3au3"
 
 [node name="EnemyBat" parent="Floor_7/Path2D/CustomPathFollow" unique_id=2049950902 node_paths=PackedStringArray("path") instance=ExtResource("21_tawbq")]
+collision_mask = 6
 path = NodePath("..")
 
 [node name="Floor_8" type="Node2D" parent="." unique_id=345322163]
@@ -365,6 +367,7 @@ position = Vector2(134, -1329)
 
 [node name="EnemyRino" parent="Floor_9" unique_id=420838828 instance=ExtResource("15_7rk1p")]
 position = Vector2(-96, 96)
+collision_mask = 6
 
 [node name="FruitBanana" parent="Floor_9" unique_id=1100929498 instance=ExtResource("7_7trcl")]
 position = Vector2(-30, -30)
@@ -409,16 +412,20 @@ scale = Vector2(2, 2)
 
 [node name="EnemyPig" parent="Floor_10" unique_id=1665409468 instance=ExtResource("16_jbxxx")]
 position = Vector2(-45, 4)
+collision_mask = 6
 
 [node name="EnemyPig2" parent="Floor_10" unique_id=1273318346 instance=ExtResource("16_jbxxx")]
 position = Vector2(-45, -124)
+collision_mask = 6
 move_speed = 60
 
 [node name="EnemyChameleon" parent="Floor_10" unique_id=1386541326 instance=ExtResource("25_tawbq")]
 position = Vector2(32, 96)
+collision_mask = 6
 
 [node name="EnemyPlant" parent="Floor_10" unique_id=640388593 instance=ExtResource("26_5ub58")]
 position = Vector2(101, -43)
+collision_mask = 6
 
 [node name="Floor_11" type="Node2D" parent="." unique_id=6001495]
 position = Vector2(140, -1876)
@@ -428,8 +435,7 @@ position = Vector2(0, 51)
 
 [node name="EnemyBossBeehive" parent="Floor_11" unique_id=1732946433 instance=ExtResource("28_tvnbm")]
 position = Vector2(-5, -32)
-health = null
-touch_damage = null
+collision_mask = 6
 
 [node name="Path2D" type="Path2D" parent="Floor_11" unique_id=980410268]
 position = Vector2(3, 27)
