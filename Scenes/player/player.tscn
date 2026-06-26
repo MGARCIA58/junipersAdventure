@@ -133,7 +133,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fly",
-"speed": 8.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -141,6 +141,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_kysaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dpkfr")
 }],
 "loop": false,
 "name": &"hit",
@@ -236,8 +239,9 @@ unique_name_in_owner = true
 position = Vector2(0, -2)
 scale = Vector2(0.5464285, 0.5464285)
 sprite_frames = SubResource("SpriteFrames_aa0hm")
-animation = &"dead"
+animation = &"fly"
 autoplay = "idle"
+frame_progress = 0.8944377
 
 [node name="RayCast2D" type="RayCast2D" parent="Visuals" unique_id=1147322477]
 unique_name_in_owner = true

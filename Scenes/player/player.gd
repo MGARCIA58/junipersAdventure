@@ -15,6 +15,7 @@ var jumps_left : int
 var move_direction := 1
 var can_move := true
 var taking_damage := false
+var fly_mode := false
 
 func _ready() -> void:
 	jumps_left = max_jumps
@@ -22,10 +23,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not can_move:
 		return
-	handle_movement()
-	handle_gravity(delta)
+	if fly_mode:
+		handle_flight(delta)
+	else:
+		handle_movement()
+		handle_gravity(delta)
+		hande_jump_input()
 	handle_wall_collision()
-	hande_jump_input()
 	move_and_slide()
 	
 func handle_movement() -> void:
@@ -44,10 +48,19 @@ func handle_movement() -> void:
 			anim_sprite.play("run")
 		else:
 			anim_sprite.play("idle")
-	jumps_left = max_jumps
-		
-func handle_gravity(delta: float) -> void:
-	if not  is_on_floor():
+			jumps_left = max_jumps
+	
+func handle_flight(delta):
+	var x = Input.get_axis("keyboard_left", "keyboard_right")
+	var y = Input.get_axis("keyboard_up", "keyboard_down")
+	velocity.x = x * max_speed
+	velocity.y = y * max_speed
+	if is_on_floor():
+		fly_mode = false
+		jumps_left = max_jumps
+	
+func handle_gravity(delta):
+	if !is_on_floor():
 		velocity.y += gravity * delta
 		
 func handle_wall_collision() -> void:
@@ -56,9 +69,6 @@ func handle_wall_collision() -> void:
 		
 	velocity.y = 50
 	jumps_left = max_jumps
-	
-	#if is_on_floor():
-		#change_direction()
 		
 func change_direction(direction) -> void:
 	move_direction = direction
@@ -79,15 +89,15 @@ func hande_jump_input() -> void:
 		jump()
 	
 func jump() -> void:
-	if jumps_left <= 0:
+	if fly_mode:
 		return
-	
-	velocity.y = -jump_force
-	jumps_left -= 1
-	if jumps_left <= 0:
-		anim_sprite.play("double_jump")
-	else:
+	if jumps_left == max_jumps:
+		velocity.y = -jump_force
+		jumps_left -= 1
 		anim_sprite.play("jump")
+	else:
+		fly_mode = true
+		anim_sprite.play("fly")
 
 func player_dead() -> void:
 	can_move = false
@@ -101,7 +111,6 @@ func player_damage() -> void:
 	taking_damage = true
 	anim_sprite.play("hit")
 	await anim_sprite.animation_finished
-
 	taking_damage = false
 	
 func player_respawn() -> void:
