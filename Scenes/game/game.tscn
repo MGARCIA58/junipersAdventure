@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://cvlp5dmqrsrs6" path="res://Scenes/enemies/enemy_plant.tscn" id="26_5ub58"]
 [ext_resource type="PackedScene" uid="uid://j12jir3jee6" path="res://Scenes/circles/yellow_circle.tscn" id="26_yl8fu"]
 [ext_resource type="PackedScene" uid="uid://b2te3cnulk7d0" path="res://Scenes/enemies/enemy_boss_beehive.tscn" id="28_tvnbm"]
+[ext_resource type="Texture2D" uid="uid://bgr17re106q0d" path="res://LeapNight Assets/Sprites/Other/hearts.png" id="31_mmnmt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0b77"]
 shader = ExtResource("1_g0siu")
@@ -79,6 +80,21 @@ bg_color = Color(1, 1, 1, 1)
 font = ExtResource("18_klkrs")
 font_size = 30
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeitv"]
+atlas = ExtResource("31_mmnmt")
+region = Rect2(0, 0, 19, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2700v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeitv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Game" type="Node2D" unique_id=1083296686]
 script = ExtResource("1_d0b77")
 
@@ -101,7 +117,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
-position = Vector2(127, 395)
+position = Vector2(134, 349)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0
@@ -181,7 +197,7 @@ shape = SubResource("RectangleShape2D_vjhi1")
 one_way_collision = true
 
 [node name="Floor_2" type="Node2D" parent="." unique_id=1452229743]
-position = Vector2(132, 129)
+position = Vector2(551, 147)
 
 [node name="SpikeBlock" parent="Floor_2" unique_id=482474566 instance=ExtResource("5_7pssd")]
 position = Vector2(-90, -43)
@@ -555,6 +571,31 @@ stretch_mode = 5
 
 [node name="Points" type="Label" parent="GameUI/Control" unique_id=558567040]
 unique_name_in_owner = true
+layout_mode = 0
+offset_left = 39.0
+offset_top = 5.0
+offset_right = 79.0
+offset_bottom = 41.0
+text = "0"
+label_settings = SubResource("LabelSettings_ai5tx")
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="GameUI" unique_id=1253089488]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 42.0
+offset_top = -9.0
+offset_right = 122.0
+offset_bottom = 41.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GameUI/Control2" unique_id=16717129]
+position = Vector2(26, 24)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_2700v")
+
+[node name="HealthPoints" type="Label" parent="GameUI/Control2" unique_id=1813652348]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 5.0

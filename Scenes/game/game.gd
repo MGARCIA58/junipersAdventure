@@ -6,6 +6,7 @@ class_name Game
 @onready var checkpoint_respawn_pos: Marker2D = $checkpointRespawnPos
 @onready var game_won_panel: Panel = %GameWonPanel
 @onready var points_label: Label = %Points
+@onready var health_points_label: Label = $GameUI/Control2/HealthPoints
 
 var health_points: int = 10
 var points: int
@@ -17,7 +18,7 @@ func _ready() -> void:
 	EventManager.on_checkpoint_reached.connect(_on_checkpoint_reached)
 	EventManager.on_game_won.connect(_on_game_won)
 	EventManager.on_player_damage.connect(_on_player_damage)
-	
+	health_points_label.text = str(health_points)
 	
 func get_respawn_pos() -> Vector2:
 	if checkpoint_reached:
@@ -31,7 +32,7 @@ func _on_player_damage(damage) -> void:
 	if health_points <= 0:
 		health_points = 0
 		_on_player_dead()
-	print("health_points ", health_points)
+	health_points_label.text = str(health_points)
 
 func _on_player_dead() -> void:
 	player.player_dead()
