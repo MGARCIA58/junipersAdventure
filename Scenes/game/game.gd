@@ -18,6 +18,7 @@ func _ready() -> void:
 	EventManager.on_checkpoint_reached.connect(_on_checkpoint_reached)
 	EventManager.on_game_won.connect(_on_game_won)
 	EventManager.on_player_damage.connect(_on_player_damage)
+	EventManager.on_health_collected.connect(_on_health_collected)
 	health_points_label.text = str(health_points)
 	
 func get_respawn_pos() -> Vector2:
@@ -41,7 +42,10 @@ func _on_player_dead() -> void:
 	tween.tween_property(player, "global_position", get_respawn_pos(), 0.5)
 	tween.tween_callback(player.player_respawn)
 	
-
+func _on_health_collected() -> void:
+	health_points += 1
+	health_points_label.text = str(health_points)
+	
 func _on_fruit_collected() -> void:
 	points += 1
 	points_label.text = str(points)

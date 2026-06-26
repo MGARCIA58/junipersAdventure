@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dynbmbb6hlapb" path="res://Scenes/traps/spike_ball.tscn" id="14_hxkax"]
 [ext_resource type="PackedScene" uid="uid://xugptf4kycjl" path="res://Scenes/obstacles/yellow_obstacle_2.tscn" id="14_jodyk"]
 [ext_resource type="PackedScene" uid="uid://dk44havo7jokk" path="res://Scenes/enemies/enemy_rino.tscn" id="15_7rk1p"]
+[ext_resource type="PackedScene" uid="uid://bmf3bioky6g6b" path="res://Scenes/player/health_coin.tscn" id="15_aeitv"]
 [ext_resource type="PackedScene" uid="uid://dvpfombbd4h53" path="res://Scenes/enemies/enemy_pig.tscn" id="16_jbxxx"]
 [ext_resource type="PackedScene" uid="uid://cpwbhyuknm0py" path="res://Scenes/extra/end_checkpoint.tscn" id="17_2wwbv"]
 [ext_resource type="PackedScene" uid="uid://crlw8v62anylg" path="res://Scenes/enemies/enemy_bee.tscn" id="18_jodyk"]
@@ -239,6 +240,9 @@ position = Vector2(30, 90)
 
 [node name="YellowObstacle2" parent="Floor_2" unique_id=1149898542 instance=ExtResource("14_jodyk")]
 position = Vector2(-124, 80)
+
+[node name="healthCoin" parent="Floor_2" unique_id=489151539 instance=ExtResource("15_aeitv")]
+position = Vector2(-321, 206)
 
 [node name="Floor_3" type="Node2D" parent="." unique_id=1366972042]
 

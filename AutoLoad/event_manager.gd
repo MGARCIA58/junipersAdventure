@@ -8,3 +8,4 @@ signal on_game_won
 signal rotate_blue_obstacles
 signal rotate_red_obstacles
 signal rotate_yellow_obstacles
+signal on_health_collected
