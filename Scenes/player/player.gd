@@ -114,9 +114,9 @@ func player_damage() -> void:
 	if taking_damage:
 		return
 	taking_damage = true
+	SoundManager.play_player_damage()
 	anim_sprite.play("hit")
-	await anim_sprite.animation_finished
-
+	await get_tree().create_timer(0.25).timeout
 	taking_damage = false
 	
 func player_respawn() -> void:

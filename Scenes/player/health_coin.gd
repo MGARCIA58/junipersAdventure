@@ -9,6 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	collected = true
+	SoundManager.play_coin()
 	anim_sprite.play("collected")
 	EventManager.on_health_collected.emit()
 	await get_tree().create_timer(0.5).timeout

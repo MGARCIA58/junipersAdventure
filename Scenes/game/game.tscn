@@ -41,6 +41,12 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0b77"]
 shader = ExtResource("1_g0siu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjhi1"]
+size = Vector2(256, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meiaf"]
+size = Vector2(94, 5)
+
 [sub_resource type="Curve2D" id="Curve2D_5l446"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 51, -575, 0, 0, 0, 0, 236, -575)
@@ -70,12 +76,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 89, -59.28, 0, 0, 0, 0, 35, -61.04001, 0, 0, 0, 0, -14, -58.40001, 0, 0, 0, 0, -59, -61.04001, 0, 0, 0, 0, -80, -61.92, 0, 0, 0, 0, -98, -61.04001)
 }
 point_count = 6
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjhi1"]
-size = Vector2(256, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_meiaf"]
-size = Vector2(94, 5)
 
 [sub_resource type="Curve2D" id="Curve2D_tvnbm"]
 _data = {
@@ -155,108 +155,6 @@ tile_set = ExtResource("2_u7m1m")
 tile_map_data = PackedByteArray("AAABANf/AAARAAIAAAACANf/AAASAAIAAAADANf/AAATAAIAAAAEANf/AAARAAIAAAAFANf/AAASAAIAAAALANf/AAARAAIAAAAMANf/AAASAAIAAAANANf/AAATAAIAAAAOANf/AAARAAIAAAAPANf/AAASAAIAAAABALT/AAARAAIAAAACALT/AAASAAIAAAADALT/AAATAAIAAAAEALT/AAARAAIAAAAFALT/AAASAAIAAAAGALT/AAATAAIAAAAHALT/AAARAAIAAAAIALT/AAASAAIAAAAJALT/AAATAAIAAAAKALT/AAARAAIAAAALALT/AAASAAIAAAAMALT/AAATAAIAAAANALT/AAARAAIAAAAOALT/AAASAAIAAAAPALT/AAATAAIAAAABAKL/AAASAAIAAAACAKL/AAATAAIAAAADAKL/AAARAAIAAAAEAKL/AAASAAIAAAAFAKL/AAATAAIAAAAGAKL/AAARAAIAAAAHAKL/AAASAAIAAAAIAKL/AAATAAIAAAAJAKL/AAARAAIAAAAKAKL/AAASAAIAAAALAKL/AAATAAIAAAAMAKL/AAARAAIAAAANAKL/AAASAAIAAAAOAKL/AAATAAIAAAAPAKL/AAARAAIAAAABAI7/AAASAAIAAAACAI7/AAATAAIAAAADAI7/AAARAAIAAAAEAI7/AAASAAIAAAAFAI7/AAATAAIAAAAGAI7/AAARAAIAAAAHAI7/AAASAAIAAAAIAI7/AAATAAIAAAAJAI7/AAARAAIAAAAKAI7/AAASAAIAAAALAI7/AAATAAIAAAAMAI7/AAARAAIAAAANAI7/AAASAAIAAAAOAI7/AAARAAIAAAAPAI7/AAASAAIAAAABAIb/AAASAAIAAAACAIb/AAATAAIAAAAGAIb/AAARAAIAAAAHAIb/AAASAAIAAAAIAIb/AAATAAIAAAAJAIb/AAARAAIAAAAKAIb/AAASAAIAAAALAIb/AAATAAIAAAD//5X/AAABAAEAAAD//5b/AAABAAEAAAD7/3z/AAABAAEAAAD7/33/AAABAAEAAAD7/37/AAABAAEAAAD7/3//AAABAAEAAAD7/4D/AAABAAEAAAD7/4H/AAABAAEAAAD7/4L/AAABAAEAAAD7/4P/AAABAAEAAAD7/4T/AAABAAEAAAD7/4X/AAABAAEAAAD7/4b/AAABAAEAAAD7/4f/AAABAAEAAAD7/4j/AAABAAEAAAD7/4n/AAABAAEAAAD7/4r/AAABAAEAAAD7/4v/AAABAAEAAAD7/4z/AAABAAEAAAD7/43/AAABAAEAAAD7/47/AAABAAEAAAD7/4//AAABAAEAAAD7/5D/AAABAAEAAAD7/5H/AAABAAEAAAD7/5L/AAABAAEAAAD7/5P/AAABAAEAAAD7/5T/AAABAAEAAAD7/5X/AAABAAEAAAD8/3z/AAABAAEAAAD8/33/AAABAAEAAAD8/37/AAABAAEAAAD8/3//AAABAAEAAAD8/4D/AAABAAEAAAD8/4H/AAABAAEAAAD8/4L/AAABAAEAAAD8/4P/AAABAAEAAAD8/4T/AAABAAEAAAD8/4X/AAABAAEAAAD8/4b/AAABAAEAAAD8/4f/AAABAAEAAAD8/4j/AAABAAEAAAD8/4n/AAABAAEAAAD8/4r/AAABAAEAAAD8/4v/AAABAAEAAAD8/4z/AAABAAEAAAD8/43/AAABAAEAAAD8/47/AAABAAEAAAD8/4//AAABAAEAAAD8/5D/AAABAAEAAAD8/5H/AAABAAEAAAD8/5L/AAABAAEAAAD8/5P/AAABAAEAAAD8/5T/AAABAAEAAAD8/5X/AAABAAEAAAD9/3z/AAABAAEAAAD9/33/AAABAAEAAAD9/37/AAABAAEAAAD9/3//AAABAAEAAAD9/4D/AAABAAEAAAD9/4H/AAABAAEAAAD9/4L/AAABAAEAAAD9/4P/AAABAAEAAAD9/4T/AAABAAEAAAD9/4X/AAABAAEAAAD9/4b/AAABAAEAAAD9/4f/AAABAAEAAAD9/4j/AAABAAEAAAD9/4n/AAABAAEAAAD9/4r/AAABAAEAAAD9/4v/AAABAAEAAAD9/4z/AAABAAEAAAD9/43/AAABAAEAAAD9/47/AAABAAEAAAD9/4//AAABAAEAAAD9/5D/AAABAAEAAAD9/5H/AAABAAEAAAD9/5L/AAABAAEAAAD9/5P/AAABAAEAAAD9/5T/AAABAAEAAAD9/5X/AAABAAEAAAD+/3z/AAABAAEAAAD+/33/AAABAAEAAAD+/37/AAABAAEAAAD+/3//AAABAAEAAAD+/4D/AAABAAEAAAD+/4H/AAABAAEAAAD+/4L/AAABAAEAAAD+/4P/AAABAAEAAAD+/4T/AAABAAEAAAD+/4X/AAABAAEAAAD+/4b/AAABAAEAAAD+/4f/AAABAAEAAAD+/4j/AAABAAEAAAD+/4n/AAABAAEAAAD+/4r/AAABAAEAAAD+/4v/AAABAAEAAAD+/4z/AAABAAEAAAD+/43/AAABAAEAAAD+/47/AAABAAEAAAD+/4//AAABAAEAAAD+/5D/AAABAAEAAAD+/5H/AAABAAEAAAD+/5L/AAABAAEAAAD+/5P/AAABAAEAAAD+/5T/AAABAAEAAAD+/5X/AAABAAEAAAD//3z/AAABAAEAAAD//33/AAABAAEAAAD//37/AAABAAEAAAD//3//AAABAAEAAAD//4D/AAABAAEAAAD//4H/AAABAAEAAAD//4L/AAABAAEAAAD//4P/AAABAAEAAAD//4T/AAABAAEAAAD//4X/AAABAAEAAAD//4b/AAABAAEAAAD//4f/AAABAAEAAAD//4j/AAABAAEAAAD//4n/AAABAAEAAAD//4r/AAABAAEAAAD//4v/AAABAAEAAAD//4z/AAABAAEAAAD//43/AAABAAEAAAD//47/AAABAAEAAAD//4//AAABAAEAAAD//5D/AAABAAEAAAD//5H/AAABAAEAAAD//5L/AAABAAEAAAD//5P/AAABAAEAAAD//5T/AAABAAEAAAARAH3/AAABAAEAAAARAH7/AAABAAEAAAARAH//AAABAAEAAAARAID/AAABAAEAAAARAIH/AAABAAEAAAASAH3/AAABAAEAAAASAH7/AAABAAEAAAASAH//AAABAAEAAAASAID/AAABAAEAAAASAIH/AAABAAEAAAATAH3/AAABAAEAAAATAH7/AAABAAEAAAATAH//AAABAAEAAAATAID/AAABAAEAAAATAIH/AAABAAEAAAAUAH3/AAABAAEAAAAUAH7/AAABAAEAAAAUAH//AAABAAEAAAAUAID/AAABAAEAAAAUAIH/AAABAAEAAAAVAH3/AAABAAEAAAAVAH7/AAABAAEAAAAVAH//AAABAAEAAAAVAID/AAABAAEAAAAVAIH/AAABAAEAAAAWAH3/AAABAAEAAAAWAH7/AAABAAEAAAAWAH//AAABAAEAAAAWAID/AAABAAEAAAAWAIH/AAABAAEAAAAXAH3/AAABAAEAAAAXAH7/AAABAAEAAAAXAH//AAABAAEAAAAXAID/AAABAAEAAAAXAIH/AAABAAEAAAAAAIb/AAARAAIAAAADAIb/AAARAAIAAAAEAIb/AAASAAIAAAAFAIb/AAATAAIAAAAMAIb/AAARAAIAAAANAIb/AAASAAIAAAAOAIb/AAATAAIAAAAPAIb/AAARAAIAAAAQAIb/AAASAAIAAAABAAAAAAARAAEAAAACAAAAAAASAAEAAAADAAAAAAATAAEAAAAEAAAAAAARAAEAAAAFAAAAAAASAAEAAAAGAAAAAAATAAEAAAAHAAAAAAARAAEAAAAIAAAAAAASAAEAAAAJAAAAAAATAAEAAAAKAAAAAAARAAEAAAALAAAAAAASAAEAAAAMAAAAAAATAAEAAAANAAAAAAARAAEAAAAOAAAAAAASAAEAAAAPAAAAAAATAAEAAAA=")
 tile_set = ExtResource("2_u7m1m")
 
-[node name="Level1" type="Node2D" parent="platform" unique_id=66600516]
-position = Vector2(15, 413)
-
-[node name="BlueObstacle1" parent="platform/Level1" unique_id=1299315140 instance=ExtResource("9_hy3pq")]
-position = Vector2(139, -103)
-
-[node name="BlueObstacle2" parent="platform/Level1" unique_id=922157714 instance=ExtResource("11_qequx")]
-position = Vector2(-9, -56)
-
-[node name="YellowObstacle3" parent="platform/Level1" unique_id=1765699950 instance=ExtResource("10_2700v")]
-position = Vector2(126, -171)
-
-[node name="YellowObstacle1" parent="platform/Level1" unique_id=1271799721 instance=ExtResource("12_duc3a")]
-position = Vector2(10, -314)
-
-[node name="RedObstacle2" parent="platform/Level1" unique_id=129249693 instance=ExtResource("13_5mbx8")]
-position = Vector2(233, -270)
-rotation = 1.5707964
-
-[node name="FruitBanana" parent="platform/Level1" unique_id=445725208 instance=ExtResource("7_7trcl")]
-position = Vector2(216, -134)
-
-[node name="FruitBanana2" parent="platform/Level1" unique_id=1098586387 instance=ExtResource("7_7trcl")]
-position = Vector2(22, -152)
-
-[node name="FruitBanana3" parent="platform/Level1" unique_id=400590588 instance=ExtResource("7_7trcl")]
-position = Vector2(181, -271)
-
-[node name="PathFruta" type="Path2D" parent="platform/Level1" unique_id=935100673]
-position = Vector2(-20, 191)
-curve = SubResource("Curve2D_5l446")
-
-[node name="CustomPathFollow" parent="platform/Level1/PathFruta" unique_id=979634769 instance=ExtResource("9_5l446")]
-position = Vector2(51, -575)
-move_speed = 0.25
-
-[node name="FruitBanana" parent="platform/Level1/PathFruta/CustomPathFollow" unique_id=1348040449 instance=ExtResource("7_7trcl")]
-
-[node name="PathFruta2" type="Path2D" parent="platform/Level1" unique_id=1180130877]
-unique_name_in_owner = true
-position = Vector2(-20, 221)
-curve = SubResource("Curve2D_5a7di")
-
-[node name="CustomPathFollow" parent="platform/Level1/PathFruta2" unique_id=2125011713 instance=ExtResource("9_5l446")]
-position = Vector2(232, -567)
-rotation = -3.1310668
-move_speed = 0.35
-
-[node name="FruitBanana" parent="platform/Level1/PathFruta2/CustomPathFollow" unique_id=584360367 instance=ExtResource("7_7trcl")]
-
-[node name="PathFruta3" type="Path2D" parent="platform/Level1" unique_id=1972845840]
-unique_name_in_owner = true
-position = Vector2(-115, 294)
-curve = SubResource("Curve2D_iedfw")
-
-[node name="CustomPathFollow" parent="platform/Level1/PathFruta3" unique_id=1658348970 instance=ExtResource("9_5l446")]
-position = Vector2(235, -535)
-rotation = 1.5803199
-move_speed = 0.35
-
-[node name="FruitBanana" parent="platform/Level1/PathFruta3/CustomPathFollow" unique_id=643296377 instance=ExtResource("7_7trcl")]
-
-[node name="PathBat2" type="Path2D" parent="platform/Level1" unique_id=1223275488]
-position = Vector2(123, -333)
-curve = SubResource("Curve2D_5ub58")
-
-[node name="CustomPathFollow" type="PathFollow2D" parent="platform/Level1/PathBat2" unique_id=1137201715]
-position = Vector2(-93, -46)
-rotation = -0.13255152
-loop = false
-script = ExtResource("20_dlt2v")
-metadata/_custom_type_script = "uid://bybov4xvc3au3"
-
-[node name="EnemyBat" parent="platform/Level1/PathBat2/CustomPathFollow" unique_id=1840024189 node_paths=PackedStringArray("path") instance=ExtResource("21_tawbq")]
-path = NodePath("..")
-
-[node name="PathBat3" type="Path2D" parent="platform/Level1" unique_id=797054915]
-position = Vector2(123.00001, -154)
-scale = Vector2(1, 1.1363636)
-curve = SubResource("Curve2D_rmb0i")
-
-[node name="CustomPathFollow" type="PathFollow2D" parent="platform/Level1/PathBat3" unique_id=1852889297]
-position = Vector2(89, -59.28)
-rotation = -3.1090114
-loop = false
-script = ExtResource("20_dlt2v")
-metadata/_custom_type_script = "uid://bybov4xvc3au3"
-
-[node name="EnemyBat" parent="platform/Level1/PathBat3/CustomPathFollow" unique_id=1912347097 node_paths=PackedStringArray("path") instance=ExtResource("21_tawbq")]
-rotation = -3.1415927
-path = NodePath("..")
-
-[node name="Level2" type="Node2D" parent="platform" unique_id=879760806]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="platform/Level2" unique_id=682809879]
-collision_layer = 4
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="platform/Level2/StaticBody2D" unique_id=1090797775]
-position = Vector2(129, 3)
-shape = SubResource("RectangleShape2D_vjhi1")
-one_way_collision = true
-
 [node name="StaticBody2D" type="StaticBody2D" parent="platform" unique_id=692207458]
 collision_layer = 4
 
@@ -302,6 +200,119 @@ one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="platform/StaticBody2D" unique_id=1354188903]
 position = Vector2(129, -1822)
+shape = SubResource("RectangleShape2D_vjhi1")
+one_way_collision = true
+
+[node name="Levels" type="Node2D" parent="." unique_id=643659005]
+
+[node name="Level1" type="Node2D" parent="Levels" unique_id=66600516]
+position = Vector2(15, 413)
+
+[node name="BlueObstacle1" parent="Levels/Level1" unique_id=1299315140 instance=ExtResource("9_hy3pq")]
+position = Vector2(139, -103)
+
+[node name="BlueObstacle2" parent="Levels/Level1" unique_id=922157714 instance=ExtResource("11_qequx")]
+position = Vector2(-9, -56)
+
+[node name="YellowObstacle3" parent="Levels/Level1" unique_id=1765699950 instance=ExtResource("10_2700v")]
+position = Vector2(126, -171)
+
+[node name="YellowObstacle1" parent="Levels/Level1" unique_id=1271799721 instance=ExtResource("12_duc3a")]
+position = Vector2(10, -314)
+
+[node name="RedObstacle2" parent="Levels/Level1" unique_id=129249693 instance=ExtResource("13_5mbx8")]
+position = Vector2(233, -270)
+rotation = 1.5707964
+
+[node name="FruitBanana" parent="Levels/Level1" unique_id=445725208 instance=ExtResource("7_7trcl")]
+position = Vector2(216, -134)
+
+[node name="FruitBanana2" parent="Levels/Level1" unique_id=1098586387 instance=ExtResource("7_7trcl")]
+position = Vector2(22, -152)
+
+[node name="FruitBanana3" parent="Levels/Level1" unique_id=400590588 instance=ExtResource("7_7trcl")]
+position = Vector2(181, -271)
+
+[node name="PathFruta" type="Path2D" parent="Levels/Level1" unique_id=935100673]
+position = Vector2(-20, 191)
+curve = SubResource("Curve2D_5l446")
+
+[node name="CustomPathFollow" parent="Levels/Level1/PathFruta" unique_id=979634769 instance=ExtResource("9_5l446")]
+position = Vector2(51, -575)
+move_speed = 0.25
+
+[node name="FruitBanana" parent="Levels/Level1/PathFruta/CustomPathFollow" unique_id=1348040449 instance=ExtResource("7_7trcl")]
+
+[node name="PathFruta2" type="Path2D" parent="Levels/Level1" unique_id=1180130877]
+unique_name_in_owner = true
+position = Vector2(-20, 221)
+curve = SubResource("Curve2D_5a7di")
+
+[node name="CustomPathFollow" parent="Levels/Level1/PathFruta2" unique_id=2125011713 instance=ExtResource("9_5l446")]
+position = Vector2(232, -567)
+rotation = -3.1310668
+move_speed = 0.35
+
+[node name="FruitBanana" parent="Levels/Level1/PathFruta2/CustomPathFollow" unique_id=584360367 instance=ExtResource("7_7trcl")]
+
+[node name="PathFruta3" type="Path2D" parent="Levels/Level1" unique_id=1972845840]
+unique_name_in_owner = true
+position = Vector2(-115, 294)
+curve = SubResource("Curve2D_iedfw")
+
+[node name="CustomPathFollow" parent="Levels/Level1/PathFruta3" unique_id=1658348970 instance=ExtResource("9_5l446")]
+position = Vector2(235, -535)
+rotation = 1.5803199
+move_speed = 0.35
+
+[node name="FruitBanana" parent="Levels/Level1/PathFruta3/CustomPathFollow" unique_id=643296377 instance=ExtResource("7_7trcl")]
+
+[node name="PathBat2" type="Path2D" parent="Levels/Level1" unique_id=1223275488]
+position = Vector2(123, -333)
+curve = SubResource("Curve2D_5ub58")
+
+[node name="CustomPathFollow" type="PathFollow2D" parent="Levels/Level1/PathBat2" unique_id=1137201715]
+position = Vector2(-93, -46)
+rotation = -0.13255152
+loop = false
+script = ExtResource("20_dlt2v")
+metadata/_custom_type_script = "uid://bybov4xvc3au3"
+
+[node name="EnemyBat" parent="Levels/Level1/PathBat2/CustomPathFollow" unique_id=1840024189 node_paths=PackedStringArray("path") instance=ExtResource("21_tawbq")]
+path = NodePath("..")
+
+[node name="PathBat3" type="Path2D" parent="Levels/Level1" unique_id=797054915]
+position = Vector2(123.00001, -154)
+scale = Vector2(1, 1.1363636)
+curve = SubResource("Curve2D_rmb0i")
+
+[node name="CustomPathFollow" type="PathFollow2D" parent="Levels/Level1/PathBat3" unique_id=1852889297]
+position = Vector2(89, -59.28)
+rotation = -3.1090114
+loop = false
+script = ExtResource("20_dlt2v")
+metadata/_custom_type_script = "uid://bybov4xvc3au3"
+
+[node name="EnemyBat" parent="Levels/Level1/PathBat3/CustomPathFollow" unique_id=1912347097 node_paths=PackedStringArray("path") instance=ExtResource("21_tawbq")]
+rotation = -3.1415927
+path = NodePath("..")
+
+[node name="healthCoin" parent="Levels/Level1" unique_id=489151539 instance=ExtResource("15_aeitv")]
+position = Vector2(41, -75)
+
+[node name="healthCoin2" parent="Levels/Level1" unique_id=1071751169 instance=ExtResource("15_aeitv")]
+position = Vector2(118, -188)
+
+[node name="healthCoin3" parent="Levels/Level1" unique_id=1831022305 instance=ExtResource("15_aeitv")]
+position = Vector2(54, -327)
+
+[node name="Level2" type="Node2D" parent="Levels" unique_id=879760806]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Levels/Level2" unique_id=682809879]
+collision_layer = 4
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Levels/Level2/StaticBody2D" unique_id=1090797775]
+position = Vector2(129, 3)
 shape = SubResource("RectangleShape2D_vjhi1")
 one_way_collision = true
 
@@ -352,7 +363,7 @@ position = Vector2(30, 90)
 [node name="YellowObstacle2" parent="Floors/Floor_2" unique_id=1149898542 instance=ExtResource("14_jodyk")]
 position = Vector2(-124, 80)
 
-[node name="healthCoin" parent="Floors/Floor_2" unique_id=489151539 instance=ExtResource("15_aeitv")]
+[node name="healthCoin" parent="Floors/Floor_2" unique_id=1430387470 instance=ExtResource("15_aeitv")]
 position = Vector2(-310, 189)
 
 [node name="Floor_3" type="Node2D" parent="Floors" unique_id=1366972042]

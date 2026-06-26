@@ -20,10 +20,12 @@ func initialize(dir: Vector2):
 	#rotation = direction.angle()
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	SoundManager.play_hit_fruit()
 	queue_free()
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	SoundManager.play_hit_fruit()
 	queue_free()
 	var parent = area.get_parent()
 	if parent.is_in_group("enemy"):

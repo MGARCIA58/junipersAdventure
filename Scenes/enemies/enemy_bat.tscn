@@ -264,8 +264,10 @@ wait_time = 2.0
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=256750072]
 sprite_frames = SubResource("SpriteFrames_iisv2")
-animation = &"fly"
+animation = &"hit"
 autoplay = "fly"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=1536195167]
 disabled = true

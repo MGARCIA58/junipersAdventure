@@ -15,9 +15,14 @@ run/main_scene="uid://84tkfvwt7hys"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cj1m7vck4a88c"
+
 [autoload]
 
 EventManager="*uid://bbblva4itxaoq"
+SoundManager="*uid://ito5f21uljoq"
 
 [display]
 

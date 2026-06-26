@@ -4,7 +4,7 @@ class_name EnemyBat
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 @export var path: CustomPathFollow
-@export var health: int = 5
+@export var health: int = 3
 @export var touch_damage = 2
 @export var player: Node2D
 @export var body_in_area = false
@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 	
 
 func _on_top_area_body_entered(body: Node2D) -> void:
+	return #solo daño por bala
 	if bottom_touched:
 		return
 	if body is Player:
@@ -82,9 +83,9 @@ func hit_by_player(damage: int) -> void:
 	hitted = true
 	anim_sprite.play("hit")
 	health -= damage
-	await anim_sprite.animation_finished
-	#await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5).timeout
 	if health <= 0:
 		defeated = true
 		queue_free()
 	hitted = false
+	anim_sprite.play("fly")

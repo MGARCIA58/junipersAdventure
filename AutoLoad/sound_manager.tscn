@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ito5f21uljoq"]
+
+[ext_resource type="Script" uid="uid://bulo6oyfp77ot" path="res://AutoLoad/sound_manager.gd" id="1_jsir3"]
+[ext_resource type="AudioStream" uid="uid://bgk4bkq420luu" path="res://Sounds/main_music.mp3" id="2_d2d0e"]
+
+[node name="SoundManager" type="Node" unique_id=580677302 node_paths=PackedStringArray("stream_players")]
+script = ExtResource("1_jsir3")
+stream_players = [NodePath("SFXStreams/AudioStreamPlayer"), NodePath("SFXStreams/AudioStreamPlayer2"), NodePath("SFXStreams/AudioStreamPlayer3"), NodePath("SFXStreams/AudioStreamPlayer4"), NodePath("SFXStreams/AudioStreamPlayer5"), NodePath("SFXStreams/AudioStreamPlayer6"), NodePath("SFXStreams/AudioStreamPlayer7"), NodePath("SFXStreams/AudioStreamPlayer8"), NodePath("SFXStreams/AudioStreamPlayer9"), NodePath("SFXStreams/AudioStreamPlayer10"), NodePath("SFXStreams/AudioStreamPlayer11"), NodePath("SFXStreams/AudioStreamPlayer12"), NodePath("SFXStreams/AudioStreamPlayer13"), NodePath("SFXStreams/AudioStreamPlayer14")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1981344021]
+stream = ExtResource("2_d2d0e")
+autoplay = true
+
+[node name="SFXStreams" type="Node" parent="." unique_id=93570546]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFXStreams" unique_id=1477350534]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="SFXStreams" unique_id=772338335]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SFXStreams" unique_id=1233848327]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="SFXStreams" unique_id=563862081]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="SFXStreams" unique_id=1871755860]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="SFXStreams" unique_id=127062838]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="SFXStreams" unique_id=67053828]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="SFXStreams" unique_id=1009207314]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="SFXStreams" unique_id=597726857]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="SFXStreams" unique_id=1611803492]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="SFXStreams" unique_id=2107251716]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="SFXStreams" unique_id=1264589472]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer13" type="AudioStreamPlayer" parent="SFXStreams" unique_id=2072348756]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer14" type="AudioStreamPlayer" parent="SFXStreams" unique_id=1377211982]
+bus = &"SFX"
+
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]

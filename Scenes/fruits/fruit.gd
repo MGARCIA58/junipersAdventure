@@ -13,6 +13,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if collected:
 		return
 	
+	SoundManager.play_coin()
 	collected = true
 	anim_sprite.play("collected")
 	EventManager.on_fruit_collected.emit()
