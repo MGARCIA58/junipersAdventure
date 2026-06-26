@@ -10,4 +10,4 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	rea.play("reached")
-	EventManager.on_checkpoint_reached.emit()
+	EventManager.on_checkpoint_reached.emit(rea.global_position)

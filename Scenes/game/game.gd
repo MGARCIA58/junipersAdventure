@@ -11,6 +11,7 @@ class_name Game
 var health_points: int = 10
 var points: int
 var checkpoint_reached: bool
+var checkpoint_position: Vector2
 
 func _ready() -> void:
 	EventManager.on_player_dead.connect(_on_player_dead)
@@ -23,7 +24,7 @@ func _ready() -> void:
 	
 func get_respawn_pos() -> Vector2:
 	if checkpoint_reached:
-		return checkpoint_respawn_pos.position
+		return checkpoint_position
 	else:
 		return spawn_pos.position
 
@@ -52,8 +53,9 @@ func _on_fruit_collected() -> void:
 	points += 1
 	points_label.text = str(points)
 
-func _on_checkpoint_reached() -> void:
+func _on_checkpoint_reached(position) -> void:
 	checkpoint_reached = true
+	checkpoint_position = position
 	
 func _on_game_won() -> void:
 	game_won_panel.show()
