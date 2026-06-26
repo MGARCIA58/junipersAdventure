@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://sqj7uerejdwp"]
+
+[ext_resource type="PackedScene" uid="uid://umsr1bnvaxqd" path="res://Scenes/obstacles/yellow_obstacle_1.tscn" id="1_tlwyv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwyv"]
+size = Vector2(32, 15)
+
+[node name="YellowObstacle2" unique_id=1299315140 instance=ExtResource("1_tlwyv")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=286562639]
+position = Vector2(7, 0.5)
+shape = SubResource("RectangleShape2D_tlwyv")
+
+[node name="CollisionShape2D2" parent="." index="1" unique_id=1986252077]
+visible = false
+disabled = true
+
+[node name="TileMapLayer" parent="." index="2" unique_id=200504031]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0)

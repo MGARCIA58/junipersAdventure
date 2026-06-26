@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bol5l1ggl0ju5"]
+
+[ext_resource type="PackedScene" uid="uid://cajgosu4hryie" path="res://Scenes/obstacles/blue_obstacle_1.tscn" id="1_fls2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fls2c"]
+size = Vector2(32, 15)
+
+[node name="BlueObstacle4" unique_id=1299315140 instance=ExtResource("1_fls2c")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=286562639]
+position = Vector2(7, 0.5)
+shape = SubResource("RectangleShape2D_fls2c")
+
+[node name="CollisionShape2D2" parent="." index="1" unique_id=1986252077]
+visible = false
+disabled = true
+
+[node name="TileMapLayer" parent="." index="2" unique_id=200504031]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
