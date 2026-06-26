@@ -56,7 +56,6 @@ func handle_wall_collision() -> void:
 		
 	velocity.y = 50
 	jumps_left = max_jumps
-	anim_sprite.play("fall")
 	
 	#if is_on_floor():
 		#change_direction()
