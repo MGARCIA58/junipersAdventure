@@ -118,7 +118,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
-position = Vector2(134, 349)
+position = Vector2(58, -1843)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0
@@ -242,7 +242,7 @@ position = Vector2(30, 90)
 position = Vector2(-124, 80)
 
 [node name="healthCoin" parent="Floor_2" unique_id=489151539 instance=ExtResource("15_aeitv")]
-position = Vector2(-321, 206)
+position = Vector2(-310, 189)
 
 [node name="Floor_3" type="Node2D" parent="." unique_id=1366972042]
 
@@ -446,10 +446,9 @@ position = Vector2(140, -1876)
 [node name="EndCheckpoint" parent="Floor_11" unique_id=374497132 instance=ExtResource("17_2wwbv")]
 position = Vector2(0, 51)
 
-[node name="EnemyBossBeehive" parent="Floor_11" unique_id=1732946433 instance=ExtResource("28_tvnbm")]
+[node name="EnemyBossBeehive" parent="Floor_11" unique_id=1732946433 node_paths=PackedStringArray("bee_paths") instance=ExtResource("28_tvnbm")]
 position = Vector2(-5, -32)
-health = null
-touch_damage = null
+bee_paths = [NodePath("../Path2D/CustomPathFollow"), NodePath("../Path2D2/CustomPathFollow"), NodePath("../Path2D3/CustomPathFollow"), NodePath("../Path2D4/CustomPathFollow")]
 
 [node name="Path2D" type="Path2D" parent="Floor_11" unique_id=980410268]
 position = Vector2(3, 27)

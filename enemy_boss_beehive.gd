@@ -16,12 +16,34 @@ var defeated := false
 var top_jumped := false
 var bottom_touched := false
 var body_in_area := false
-var hittable := false
+var hittable := true
+var current_state := BossState.IDLE
+
+enum BossState {
+	IDLE,
+	PROTECTED,
+	HIT,
+	DEAD
+}
 
 func _ready():
+	add_to_group("enemy")
 	timer_spawn.timeout.connect(spawn_bees)
 	timer_hittable.timeout.connect(change_state)	
 	
+func set_state(new_state: BossState) -> void:
+	if current_state == BossState.DEAD:
+		return
+	current_state = new_state
+	match current_state:
+		BossState.IDLE:
+			anim_sprite.play("idle")
+		BossState.PROTECTED:
+			anim_sprite.play("protected")
+		BossState.HIT:
+			anim_sprite.play("hit")
+		BossState.DEAD:
+			anim_sprite.play("defeated")
 	
 func _on_bottom_area_body_entered(body: Node2D) -> void:
 	if defeated or top_jumped:
@@ -33,6 +55,7 @@ func _on_bottom_area_body_entered(body: Node2D) -> void:
 	bottom_touched = false
 	
 func spawn_bees() -> void:
+	return
 	if !body_in_area:
 		return
 	var path = get_free_path()
@@ -46,16 +69,19 @@ func spawn_bees() -> void:
 	bee.set_path(path)
 	
 func change_state() -> void:
-	if not hittable:
-		anim_sprite.play("protected")
-	if hittable:
-		anim_sprite.play("idle")
+	if current_state == BossState.DEAD:
+		return
 	hittable = !hittable
+	if hittable:
+		set_state(BossState.IDLE)
+	else:
+		set_state(BossState.PROTECTED)
 
 
 func _on_enemy_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body_in_area = true
+		timer_spawn.start()
 		
 func get_free_path() -> CustomPathFollow:
 	var free_paths: Array[CustomPathFollow] = []
@@ -65,3 +91,23 @@ func get_free_path() -> CustomPathFollow:
 	if free_paths.is_empty():
 		return null
 	return free_paths.pick_random()
+	
+func hit_by_player(damage: int) -> void:
+	if current_state == BossState.DEAD:
+		return
+	if not hittable:
+		return
+	set_state(BossState.HIT)
+	health -= damage
+	await anim_sprite.animation_finished
+	if health <= 0:
+		defeated = true
+		timer_spawn.stop()
+		timer_hittable.stop()
+		set_state(BossState.DEAD)
+		await anim_sprite.animation_finished
+		return
+	if hittable:
+		set_state(BossState.IDLE)
+	else:
+		set_state(BossState.PROTECTED)

@@ -5,8 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dgo7ccxtehgly" path="res://LeapNight Assets/Sprites/Enemies/beehive/spritesheets/hanger.png" id="3_me0aj"]
 [ext_resource type="PackedScene" uid="uid://crlw8v62anylg" path="res://Scenes/enemies/enemy_bee.tscn" id="3_rhddn"]
 [ext_resource type="Texture2D" uid="uid://cfqcp55to7rry" path="res://LeapNight Assets/Sprites/Enemies/beehive/spritesheets/__beehive_beehive_dropped.png" id="4_uijrl"]
-[ext_resource type="Texture2D" uid="uid://bxqfgd5ewptgq" path="res://LeapNight Assets/Sprites/Enemies/beehive/spritesheets/__beehive_beehive_hanging_no_bees.png" id="5_oanbn"]
-[ext_resource type="Texture2D" uid="uid://chffpcefcn5qb" path="res://LeapNight Assets/Sprites/Enemies/beehive/spritesheets/hit.png" id="6_me0aj"]
+[ext_resource type="Texture2D" uid="uid://cwck88u35w10n" path="res://LeapNight Assets/Sprites/Enemies/beehive/spritesheets/spreet.png" id="6_rhddn"]
 [ext_resource type="Texture2D" uid="uid://thmxddxgq6xt" path="res://LeapNight Assets/Sprites/Enemies/beehive/spritesheets/__beehive_beehive_hangning.png" id="6_xe68i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hpvjc"]
@@ -89,13 +88,17 @@ region = Rect2(3486, 3288, 1162, 1096)
 atlas = ExtResource("4_uijrl")
 region = Rect2(4648, 3288, 1162, 1096)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uijrl"]
-atlas = ExtResource("6_me0aj")
-region = Rect2(0, 0, 858, 1005)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o80w7"]
-atlas = ExtResource("5_oanbn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_me0aj"]
+atlas = ExtResource("6_rhddn")
 region = Rect2(0, 0, 1162, 1096)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uijrl"]
+atlas = ExtResource("6_rhddn")
+region = Rect2(1162, 0, 1162, 1096)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oanbn"]
+atlas = ExtResource("6_rhddn")
+region = Rect2(1162, 0, 1162, 1096)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5lwgi"]
 atlas = ExtResource("6_xe68i")
@@ -246,15 +249,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_me0aj")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_uijrl")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o80w7")
+"texture": SubResource("AtlasTexture_oanbn")
 }],
 "loop": true,
 "name": &"idle",
@@ -344,7 +350,6 @@ autostart = true
 [node name="TimerSpawn" type="Timer" parent="." index="1" unique_id=1930424497]
 unique_name_in_owner = true
 wait_time = 3.0
-autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2" unique_id=799831809]
 position = Vector2(3.0000002, -36.000004)
@@ -366,10 +371,17 @@ texture = ExtResource("3_me0aj")
 [node name="AnimatedSprite2D" parent="." index="5" unique_id=256750072]
 scale = Vector2(0.049612235, 0.049612228)
 sprite_frames = SubResource("SpriteFrames_1xijh")
-animation = &"hit"
+animation = &"defeated"
 autoplay = "idle"
+frame_progress = 0.6239563
 
-[node name="CollisionShape2D" parent="BottomArea" parent_id_path=PackedInt32Array(1198043486) index="0" unique_id=1196295185]
+[node name="TopArea" parent="." index="7" unique_id=721540412]
+collision_layer = 2
+
+[node name="BottomArea" parent="." index="8" unique_id=1198043486]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="BottomArea" index="0" unique_id=1196295185]
 position = Vector2(3, -3)
 shape = SubResource("CircleShape2D_f2x22")
 debug_color = Color(0.9704589, 0, 0.45776677, 0.41960785)

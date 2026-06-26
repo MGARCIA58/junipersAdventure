@@ -102,10 +102,7 @@ func jump() -> void:
 	velocity.y = -jump_force
 	jumps_left -= 1
 	coyote_timer = 0.0
-	if jumps_left <= 0:
-		anim_sprite.play("double_jump")
-	else:
-		anim_sprite.play("jump")
+	anim_sprite.play("jump")
 
 func player_dead() -> void:
 	can_move = false

@@ -3,7 +3,6 @@ class_name EnemyChameleon
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
-@onready var timer: Timer = $Timer
 @export var health: int = 6
 @export var touch_damage = 1
 @export var tongue_damage = 2
