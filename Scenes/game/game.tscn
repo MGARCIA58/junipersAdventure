@@ -211,9 +211,6 @@ position = Vector2(15, 413)
 [node name="BlueObstacle1" parent="Levels/Level1" unique_id=1299315140 instance=ExtResource("9_hy3pq")]
 position = Vector2(139, -103)
 
-[node name="BlueObstacle2" parent="Levels/Level1" unique_id=922157714 instance=ExtResource("11_qequx")]
-position = Vector2(-9, -56)
-
 [node name="YellowObstacle3" parent="Levels/Level1" unique_id=1765699950 instance=ExtResource("10_2700v")]
 position = Vector2(126, -171)
 
@@ -222,6 +219,10 @@ position = Vector2(10, -314)
 
 [node name="RedObstacle2" parent="Levels/Level1" unique_id=129249693 instance=ExtResource("13_5mbx8")]
 position = Vector2(233, -270)
+rotation = 1.5707964
+
+[node name="RedObstacle3" parent="Levels/Level1" unique_id=981875944 instance=ExtResource("15_5a7di")]
+position = Vector2(-8, -66)
 rotation = 1.5707964
 
 [node name="FruitBanana" parent="Levels/Level1" unique_id=445725208 instance=ExtResource("7_7trcl")]
