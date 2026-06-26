@@ -1,8 +1,8 @@
-[gd_scene format=4 uid="uid://cnv3t7q0g7j6d"]
+[gd_scene format=4 uid="uid://dk26mw6wmjh8g"]
 
-[ext_resource type="PackedScene" uid="uid://bx7djgxnvn51l" path="res://Scenes/obstacles/red_obstacle_1.tscn" id="1_sri6u"]
+[ext_resource type="PackedScene" uid="uid://bx7djgxnvn51l" path="res://Scenes/obstacles/red_obstacle_1.tscn" id="1_ky2r0"]
 
-[node name="RedObstacle2" unique_id=1299315140 instance=ExtResource("1_sri6u")]
+[node name="RedObstacle2" unique_id=1299315140 instance=ExtResource("1_ky2r0")]
 
 [node name="CollisionShape2D2" parent="." index="1" unique_id=1986252077]
 visible = false

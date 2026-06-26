@@ -254,7 +254,7 @@ size = Vector2(25, 5)
 size = Vector2(47, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07yjf"]
-size = Vector2(504, 292)
+size = Vector2(504, 146)
 
 [node name="EnemyBat" unique_id=2049950902 instance=ExtResource("1_x8eps")]
 script = ExtResource("2_u8qtl")
@@ -264,8 +264,8 @@ wait_time = 2.0
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=256750072]
 sprite_frames = SubResource("SpriteFrames_iisv2")
-animation = &"cout"
-autoplay = "idle"
+animation = &"fly"
+autoplay = "fly"
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=1536195167]
 disabled = true
@@ -289,7 +289,7 @@ debug_color = Color(0.9672436, 0, 0.47849762, 0.41960785)
 [node name="AttackArea" type="Area2D" parent="." index="5" unique_id=1764045432]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0" unique_id=114000192]
-position = Vector2(0, 85)
+position = Vector2(0, 44)
 shape = SubResource("RectangleShape2D_07yjf")
 debug_color = Color(0.5233627, 0.5738276, 3.85046e-07, 0.41960785)
 

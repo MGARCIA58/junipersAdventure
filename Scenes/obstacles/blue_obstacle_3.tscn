@@ -1,0 +1,149 @@
+[gd_scene format=4 uid="uid://bk2wxx1x4tj17"]
+
+[ext_resource type="Script" uid="uid://co2doc57qfmuh" path="res://Scenes/obstacles/blue_obstacle_1.gd" id="1_r37my"]
+[ext_resource type="Texture2D" uid="uid://st4anwskpb4q" path="res://LeapNight Assets/Sprites/Terrain/Blue-Tileset-Spritesheet.png" id="2_pbd3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64qu8"]
+size = Vector2(112, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8lxh"]
+size = Vector2(15, 95)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kb2iw"]
+texture = ExtResource("2_pbd3h")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y720s"]
+sources/1 = SubResource("TileSetAtlasSource_kb2iw")
+
+[node name="BlueObstacle3" type="AnimatableBody2D" unique_id=1299315140]
+collision_layer = 4
+script = ExtResource("1_r37my")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286562639]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_64qu8")
+debug_color = Color(0.13572806, 0.62841153, 0.44065893, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1986252077]
+visible = false
+position = Vector2(-0.5, 40.5)
+shape = SubResource("RectangleShape2D_l8lxh")
+disabled = true
+debug_color = Color(0.13572806, 0.62841153, 0.44065893, 0.41960785)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=200504031]
+position = Vector2(-9, -8)
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQAFAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD9/wAAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_y720s")

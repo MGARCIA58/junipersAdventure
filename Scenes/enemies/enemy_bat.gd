@@ -74,6 +74,7 @@ func attack_player() -> void:
 	await tween.finished
 	path.can_move = true
 	attacking = false
+	timer.start()
 
 func hit_by_player(damage: int) -> void:
 	if hitted:

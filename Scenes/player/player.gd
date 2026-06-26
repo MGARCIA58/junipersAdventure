@@ -4,7 +4,7 @@ class_name Player
 @export var max_speed := 180.0
 @export var jump_force := 450.0
 @export var wall_jump_force = 550.0
-@export var max_jumps := 2
+@export var max_jumps := 1
 @export var gravity := 1600.0
 @export var player_bullet: PackedScene
 @export var wall_slide_speed := 70.0
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		coyote_timer -= delta
 	hande_jump_input()
 	move_and_slide()
-	handle_wall_collision()
+	#handle_wall_collision()
 	handle_shoot()
 	
 func handle_movement() -> void:

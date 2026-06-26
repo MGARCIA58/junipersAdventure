@@ -1,0 +1,15 @@
+[gd_scene format=4 uid="uid://cnv3t7q0g7j6d"]
+
+[ext_resource type="PackedScene" uid="uid://bx7djgxnvn51l" path="res://Scenes/obstacles/red_obstacle_1.tscn" id="1_sri6u"]
+
+[node name="RedObstacle3" unique_id=1299315140 instance=ExtResource("1_sri6u")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=286562639]
+position = Vector2(0, 0.5)
+
+[node name="CollisionShape2D2" parent="." index="1" unique_id=1986252077]
+visible = false
+disabled = true
+
+[node name="TileMapLayer" parent="." index="2" unique_id=200504031]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAAFAAAAAAD//wAAAAACAAAAAAD+/wAAAAACAAAAAAD9/wAAAAAAAAAAAAA=")

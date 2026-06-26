@@ -2,9 +2,12 @@ extends Area2D
 class_name Fruit
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+var fruits: Array[String] = ["apple", "banana", "cherry", "kiwi", "orange", "pineapple", "watermelon"]
 var collected := false
 
+func _ready():
+	if !fruits.is_empty():
+		anim_sprite.play(fruits.pick_random())
 
 func _on_body_entered(body: Node2D) -> void:
 	if collected:

@@ -41,6 +41,8 @@ func _on_player_dead() -> void:
 	var tween := create_tween()
 	tween.tween_property(player, "global_position", get_respawn_pos(), 0.5)
 	tween.tween_callback(player.player_respawn)
+	health_points = 10
+	health_points_label.text = str(health_points)
 	
 func _on_health_collected() -> void:
 	health_points += 1

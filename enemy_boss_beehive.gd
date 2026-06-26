@@ -55,7 +55,6 @@ func _on_bottom_area_body_entered(body: Node2D) -> void:
 	bottom_touched = false
 	
 func spawn_bees() -> void:
-	return
 	if !body_in_area:
 		return
 	var path = get_free_path()
