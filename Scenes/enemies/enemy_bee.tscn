@@ -178,11 +178,17 @@ sprite_frames = SubResource("SpriteFrames_l6jcm")
 animation = &"attack"
 autoplay = "idle"
 
-[node name="CollisionShape2D" parent="TopArea" parent_id_path=PackedInt32Array(721540412) index="0" unique_id=966509429]
+[node name="TopArea" parent="." index="3" unique_id=721540412]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="TopArea" index="0" unique_id=966509429]
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_swv8q")
 
-[node name="CollisionShape2D" parent="BottomArea" parent_id_path=PackedInt32Array(1198043486) index="0" unique_id=1196295185]
+[node name="BottomArea" parent="." index="4" unique_id=1198043486]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="BottomArea" index="0" unique_id=1196295185]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_xpw2i")
 debug_color = Color(0.9878958, 0, 0.3131107, 0.41960785)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duvnwcxn554un"]
 
 [ext_resource type="Script" uid="uid://be02aoe5frii0" path="res://Scenes/player/player.gd" id="1_8p05u"]
+[ext_resource type="PackedScene" uid="uid://cfnu4rbg2ns40" path="res://Scenes/player/player_bullet.tscn" id="2_ua3np"]
 [ext_resource type="Texture2D" uid="uid://cuivmvt2d6rh7" path="res://LeapNight Assets/Sprites/Main Characters/Desappearing (96x96).png" id="2_xxarj"]
 [ext_resource type="Texture2D" uid="uid://branl3d26vc4j" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_fall/fall1.png" id="4_spm8d"]
 [ext_resource type="Texture2D" uid="uid://ctg3yxj5l6pft" path="res://LeapNight Assets/Sprites/Main Characters/juniper/juniper_fall/fall2.png" id="5_dpkfr"]
@@ -227,6 +228,7 @@ height = 28.0
 [node name="Player" type="CharacterBody2D" unique_id=354303938]
 collision_mask = 14
 script = ExtResource("1_8p05u")
+player_bullet = ExtResource("2_ua3np")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=1685989617]
 position = Vector2(0, -13)
@@ -236,7 +238,7 @@ unique_name_in_owner = true
 position = Vector2(0, -2)
 scale = Vector2(0.5464285, 0.5464285)
 sprite_frames = SubResource("SpriteFrames_aa0hm")
-animation = &"dead"
+animation = &"run"
 autoplay = "idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="Visuals" unique_id=1147322477]
@@ -247,3 +249,6 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=410470752]
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_ch70o")
+
+[node name="ShootingHole" type="Marker2D" parent="." unique_id=1239064158]
+position = Vector2(7, -10)

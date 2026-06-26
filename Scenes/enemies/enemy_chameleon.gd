@@ -15,7 +15,10 @@ var top_jumped := false
 var bottom_touched := false
 var attacking := false
 var hit_player  := false
-	
+var hitted := false
+
+func _ready() -> void:
+	add_to_group("enemy")	
 	
 func _process(delta: float) -> void:
 	await get_tree().create_timer(1).timeout
@@ -26,14 +29,8 @@ func _on_top_area_body_entered(body: Node2D) -> void:
 		return
 	if body is Player:
 		top_jumped = true
-		anim_sprite.play("hit")
 		body.velocity.y = -400
-		health -= 1
-		await anim_sprite.animation_finished
-		#await get_tree().create_timer(0.5).timeout
-		if health <= 0:
-			defeated = true
-			queue_free()
+		hit_by_player(2)
 		top_jumped = false
 	
 func _on_bottom_area_body_entered(body: Node2D) -> void:
@@ -72,3 +69,16 @@ func check_tongue_hit() -> void:
 		if body is Player:
 			hit_player = true
 			EventManager.on_player_damage.emit(tongue_damage)
+
+func hit_by_player(damage: int) -> void:
+	if hitted:
+		return
+	hitted = true
+	anim_sprite.play("hit")
+	health -= damage
+	await anim_sprite.animation_finished
+	#await get_tree().create_timer(0.5).timeout
+	if health <= 0:
+		defeated = true
+		queue_free()
+	hitted = false

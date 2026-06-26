@@ -13,10 +13,10 @@ var defeated := false
 var top_jumped := false
 var bottom_touched := false
 var attacking := false
+var hitted := false
 
 func _ready():
-	print(timer)
-	print(timer.wait_time)
+	add_to_group("enemy")
 	timer.timeout.connect(attack_player)
 	
 func _process(delta: float) -> void:
@@ -28,15 +28,8 @@ func _on_top_area_body_entered(body: Node2D) -> void:
 		return
 	if body is Player:
 		top_jumped = true
-		anim_sprite.play("hit")
 		body.velocity.y = -400
-		health -= 1
-		await anim_sprite.animation_finished
-		#await get_tree().create_timer(0.5).timeout
-		if health <= 0:
-			path.can_move = false
-			defeated = true
-			queue_free()
+		hit_by_player(2)
 		top_jumped = false
 
 
@@ -48,7 +41,7 @@ func _on_bottom_area_body_entered(body: Node2D) -> void:
 		bottom_touched = true
 		EventManager.on_player_damage.emit(touch_damage)
 		await get_tree().create_timer(2).timeout
-		bottom_touched = false
+	bottom_touched = false
 	
 
 
@@ -81,3 +74,16 @@ func attack_player() -> void:
 	await tween.finished
 	path.can_move = true
 	attacking = false
+
+func hit_by_player(damage: int) -> void:
+	if hitted:
+		return
+	hitted = true
+	anim_sprite.play("hit")
+	health -= damage
+	await anim_sprite.animation_finished
+	#await get_tree().create_timer(0.5).timeout
+	if health <= 0:
+		defeated = true
+		queue_free()
+	hitted = false

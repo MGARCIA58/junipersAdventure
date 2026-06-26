@@ -15,22 +15,19 @@ var defeated := false
 var top_jumped := false
 var bottom_touched := false
 var body_in_area := false
+var hitted := false
+
+func _ready() -> void:
+	add_to_group("enemy")
 	
 func _on_top_area_body_entered(body: Node2D) -> void:
 	if bottom_touched:
 		return
-	if not body is Player:
-		return
-	top_jumped = true
-	anim_sprite.play("hit")
-	body.velocity.y = -400
-	health -= 1
-	await anim_sprite.animation_finished
-	#await get_tree().create_timer(0.5).timeout
-	if health <= 0:
-		defeated = true
-		queue_free()
-	top_jumped = false
+	if body is Player:
+		top_jumped = true
+		body.velocity.y = -400
+		hit_by_player(2)
+		top_jumped = false
 
 
 func _on_bottom_area_body_entered(body: Node2D) -> void:
@@ -56,3 +53,16 @@ func shoot() -> void:
 
 func _on_timer_timeout() -> void:
 	shoot()
+
+func hit_by_player(damage: int) -> void:
+	if hitted:
+		return
+	hitted = true
+	anim_sprite.play("hit")
+	health -= damage
+	await anim_sprite.animation_finished
+	#await get_tree().create_timer(0.5).timeout
+	if health <= 0:
+		defeated = true
+		queue_free()
+	hitted = false

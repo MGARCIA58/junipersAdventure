@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cfnu4rbg2ns40"]
+
+[ext_resource type="Script" uid="uid://dpm83gyr680ec" path="res://Scenes/player/player_bullet.gd" id="1_ptfuk"]
+[ext_resource type="Texture2D" uid="uid://bhclxjvown0gp" path="res://LeapNight Assets/Sprites/Items/Fruits/single watermelon.png" id="2_3tpuo"]
+[ext_resource type="Texture2D" uid="uid://8vdurj13yact" path="res://LeapNight Assets/Sprites/Items/Fruits/singleapple.png" id="3_hhamq"]
+[ext_resource type="Texture2D" uid="uid://dh4lquorui3cg" path="res://LeapNight Assets/Sprites/Items/Fruits/singlebananas.png" id="4_vxatw"]
+[ext_resource type="Texture2D" uid="uid://bmerxfn01cgtb" path="res://LeapNight Assets/Sprites/Items/Fruits/singlecherries.png" id="5_pwsrg"]
+[ext_resource type="Texture2D" uid="uid://di5u3tlpuwjsy" path="res://LeapNight Assets/Sprites/Items/Fruits/singlekiwi.png" id="6_8cvei"]
+[ext_resource type="Texture2D" uid="uid://dfki1835oc673" path="res://LeapNight Assets/Sprites/Items/Fruits/singleorange.png" id="7_mb252"]
+[ext_resource type="Texture2D" uid="uid://dj1ge3mno3m8j" path="res://LeapNight Assets/Sprites/Items/Fruits/singlepineapple.png" id="8_w266t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hnwec"]
+radius = 4.0
+
+[node name="PlayerBullet" type="Sprite2D" unique_id=1410871483]
+script = ExtResource("1_ptfuk")
+sprites = Array[Texture2D]([ExtResource("2_3tpuo"), ExtResource("3_hhamq"), ExtResource("4_vxatw"), ExtResource("5_pwsrg"), ExtResource("6_8cvei"), ExtResource("7_mb252"), ExtResource("8_w266t")])
+
+[node name="Area2D" type="Area2D" parent="." unique_id=329717280]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=791805000]
+shape = SubResource("CircleShape2D_hnwec")
+debug_color = Color(0.99806637, 0, 0.16217598, 0.41960785)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

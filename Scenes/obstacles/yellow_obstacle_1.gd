@@ -10,5 +10,3 @@ func _rotate_obstacle(new_rotation: float) -> void:
 	target_rotation += new_rotation
 	rotation = base_rotation + target_rotation
 	
-func _exit_tree():
-	print("Eliminado:", self, get_instance_id())

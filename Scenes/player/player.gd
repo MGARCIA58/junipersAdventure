@@ -5,11 +5,13 @@ class_name Player
 @export var jump_force := 450.0
 @export var max_jumps := 2
 @export var gravity := 1600.0
+@export var player_bullet: PackedScene
 
 @onready var visuals: Node2D = $Visuals
 @onready var anim_sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var ray_cast: RayCast2D = %RayCast2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var shooting_hole: Marker2D = $ShootingHole
 
 var jumps_left : int
 var move_direction := 1
@@ -27,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	handle_wall_collision()
 	hande_jump_input()
 	move_and_slide()
+	handle_shoot()
 	
 func handle_movement() -> void:
 	if taking_damage:
@@ -56,9 +59,12 @@ func handle_wall_collision() -> void:
 		
 	velocity.y = 50
 	jumps_left = max_jumps
-	
-	#if is_on_floor():
-		#change_direction()
+
+		
+func handle_shoot() -> void:
+	if not Input.is_action_just_pressed("shoot"):
+		return
+	shoot()
 		
 func change_direction(direction) -> void:
 	move_direction = direction
@@ -109,3 +115,14 @@ func player_respawn() -> void:
 	await anim_sprite.animation_finished
 	can_move = true
 	collision_shape_2d.set_deferred("disabled",false)
+	
+func shoot():
+	var direction = (
+		get_global_mouse_position() - global_position
+	).normalized()
+	if direction.x != 0:
+		change_direction(sign(direction.x))
+	var bullet: Player_Bullet = player_bullet.instantiate()
+	get_tree().current_scene.add_child(bullet)
+	bullet.global_position = shooting_hole.global_position
+	bullet.initialize(direction)

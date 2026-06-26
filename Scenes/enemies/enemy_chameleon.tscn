@@ -237,12 +237,18 @@ autoplay = "idle"
 frame = 7
 frame_progress = 0.53928035
 
-[node name="CollisionShape2D" parent="TopArea" parent_id_path=PackedInt32Array(721540412) index="0" unique_id=966509429]
+[node name="TopArea" parent="." index="2" unique_id=721540412]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="TopArea" index="0" unique_id=966509429]
 position = Vector2(17, -4)
 shape = SubResource("RectangleShape2D_4a34k")
 debug_color = Color(0.31153435, 0.6267624, 1.92523e-07, 0.41960785)
 
-[node name="CollisionShape2D" parent="BottomArea" parent_id_path=PackedInt32Array(1198043486) index="0" unique_id=1196295185]
+[node name="BottomArea" parent="." index="3" unique_id=1198043486]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="BottomArea" index="0" unique_id=1196295185]
 position = Vector2(17, 9)
 shape = SubResource("RectangleShape2D_5mkxn")
 debug_color = Color(0.99503726, 0, 0.21984771, 0.41960785)
