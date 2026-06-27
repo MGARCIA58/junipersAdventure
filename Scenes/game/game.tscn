@@ -6,25 +6,19 @@
 [ext_resource type="TileSet" uid="uid://ctnigqkpkhr0i" path="res://game_tile.tres" id="2_u7m1m"]
 [ext_resource type="Texture2D" uid="uid://6fcpdwudcqtp" path="res://LeapNight Assets/Sprites/Background/Sky5.png" id="3_2kyel"]
 [ext_resource type="Script" uid="uid://y0dxwqdn58kq" path="res://Scenes/game/camera_2d.gd" id="5_6y3i1"]
-[ext_resource type="PackedScene" uid="uid://bgt7i6sj5c6ld" path="res://Scenes/traps/spike_block.tscn" id="5_7pssd"]
 [ext_resource type="PackedScene" uid="uid://e2tolr6hq4jv" path="res://Scenes/fruits/fruit_banana.tscn" id="7_7trcl"]
 [ext_resource type="PackedScene" uid="uid://bdkxw7iiyctgg" path="res://Scenes/traps/spikes.tscn" id="8_nds08"]
 [ext_resource type="PackedScene" uid="uid://cnufxctdb24k2" path="res://Scenes/extra/custom_path_follow.tscn" id="9_5l446"]
 [ext_resource type="PackedScene" uid="uid://cajgosu4hryie" path="res://Scenes/obstacles/blue_obstacle_1.tscn" id="9_hy3pq"]
 [ext_resource type="PackedScene" uid="uid://dye5ceb7xow60" path="res://Scenes/obstacles/yellow_obstacle_3.tscn" id="10_2700v"]
 [ext_resource type="PackedScene" uid="uid://by05f6o3gcv86" path="res://Scenes/circles/blue_circle.tscn" id="10_ai5tx"]
-[ext_resource type="PackedScene" uid="uid://bx7djgxnvn51l" path="res://Scenes/obstacles/red_obstacle_1.tscn" id="11_btxna"]
 [ext_resource type="PackedScene" uid="uid://c5dgwcln8hykr" path="res://Scenes/obstacles/blue_obstacle_2.tscn" id="11_qequx"]
 [ext_resource type="PackedScene" uid="uid://umsr1bnvaxqd" path="res://Scenes/obstacles/yellow_obstacle_1.tscn" id="12_duc3a"]
-[ext_resource type="PackedScene" uid="uid://2mld3533hqhb" path="res://Scenes/traps/moving_rock.tscn" id="12_kw6cb"]
 [ext_resource type="PackedScene" uid="uid://dk26mw6wmjh8g" path="res://Scenes/obstacles/red_obstacle_2.tscn" id="13_5mbx8"]
 [ext_resource type="PackedScene" uid="uid://dt17w6fr17wmh" path="res://Scenes/extra/checkpoint.tscn" id="13_ii7ab"]
-[ext_resource type="PackedScene" uid="uid://dynbmbb6hlapb" path="res://Scenes/traps/spike_ball.tscn" id="14_hxkax"]
 [ext_resource type="PackedScene" uid="uid://xugptf4kycjl" path="res://Scenes/obstacles/yellow_obstacle_2.tscn" id="14_jodyk"]
 [ext_resource type="PackedScene" uid="uid://cnv3t7q0g7j6d" path="res://Scenes/obstacles/red_obstacle_3.tscn" id="15_5a7di"]
-[ext_resource type="PackedScene" uid="uid://dk44havo7jokk" path="res://Scenes/enemies/enemy_rino.tscn" id="15_7rk1p"]
 [ext_resource type="PackedScene" uid="uid://bmf3bioky6g6b" path="res://Scenes/player/health_coin.tscn" id="15_aeitv"]
-[ext_resource type="PackedScene" uid="uid://dvpfombbd4h53" path="res://Scenes/enemies/enemy_pig.tscn" id="16_jbxxx"]
 [ext_resource type="PackedScene" uid="uid://cpwbhyuknm0py" path="res://Scenes/extra/end_checkpoint.tscn" id="17_2wwbv"]
 [ext_resource type="PackedScene" uid="uid://crlw8v62anylg" path="res://Scenes/enemies/enemy_bee.tscn" id="18_jodyk"]
 [ext_resource type="FontFile" uid="uid://daihrgaf846ud" path="res://LeapNight Assets/Fonts/upheavtt.ttf" id="18_klkrs"]
@@ -84,7 +78,7 @@ _data = {
 point_count = 14
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kyel"]
-bg_color = Color(0.09293706, 0.6851695, 0.6785446, 1)
+bg_color = Color(2.117753e-06, 0.46911728, 0.23589244, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -92,7 +86,15 @@ border_width_bottom = 4
 
 [sub_resource type="LabelSettings" id="LabelSettings_hy3pq"]
 font = ExtResource("18_klkrs")
-font_size = 32
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_gnbld"]
+font = ExtResource("18_klkrs")
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_mmnmt"]
+font = ExtResource("18_klkrs")
+font_size = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai5tx"]
 bg_color = Color(1, 1, 1, 1)
@@ -1128,217 +1130,6 @@ monitoring = false
 position = Vector2(208, -360)
 monitoring = false
 
-[node name="Floors" type="Node2D" parent="." unique_id=1672830629]
-position = Vector2(433, 0)
-
-[node name="Floor_2" type="Node2D" parent="Floors" unique_id=1452229743]
-position = Vector2(551, 147)
-
-[node name="SpikeBlock" parent="Floors/Floor_2" unique_id=482474566 instance=ExtResource("5_7pssd")]
-position = Vector2(-90, -43)
-scale = Vector2(1.5, 1.5)
-
-[node name="SpikeBlock2" parent="Floors/Floor_2" unique_id=1374082637 instance=ExtResource("5_7pssd")]
-position = Vector2(101, -43)
-scale = Vector2(1.5, 1.5)
-
-[node name="FruitBanana" parent="Floors/Floor_2" unique_id=721444641 instance=ExtResource("7_7trcl")]
-position = Vector2(-25, -21)
-
-[node name="FruitBanana2" parent="Floors/Floor_2" unique_id=639119661 instance=ExtResource("7_7trcl")]
-position = Vector2(25, -21)
-
-[node name="FruitBanana3" parent="Floors/Floor_2" unique_id=1602722030 instance=ExtResource("7_7trcl")]
-position = Vector2(-25, 13)
-
-[node name="FruitBanana4" parent="Floors/Floor_2" unique_id=618909715 instance=ExtResource("7_7trcl")]
-position = Vector2(25, 13)
-
-[node name="BlueObstacle1" parent="Floors/Floor_2" unique_id=2117126930 instance=ExtResource("9_hy3pq")]
-
-[node name="BlueObstacle2" parent="Floors/Floor_2" unique_id=1075731253 instance=ExtResource("9_hy3pq")]
-position = Vector2(-4, 0)
-rotation = 1.5707964
-
-[node name="BlueObstacle3" parent="Floors/Floor_2" unique_id=1660435482 instance=ExtResource("11_qequx")]
-position = Vector2(-115, -116)
-
-[node name="RedObstacle1" parent="Floors/Floor_2" unique_id=1102420997 instance=ExtResource("11_btxna")]
-position = Vector2(0, -117)
-
-[node name="YellowObstacle1" parent="Floors/Floor_2" unique_id=1635228407 instance=ExtResource("12_duc3a")]
-position = Vector2(-68, -221)
-
-[node name="RedObstacle2" parent="Floors/Floor_2" unique_id=432624500 instance=ExtResource("15_5a7di")]
-position = Vector2(30, 90)
-
-[node name="YellowObstacle2" parent="Floors/Floor_2" unique_id=1149898542 instance=ExtResource("14_jodyk")]
-position = Vector2(-124, 80)
-
-[node name="healthCoin" parent="Floors/Floor_2" unique_id=1430387470 instance=ExtResource("15_aeitv")]
-position = Vector2(-310, 189)
-
-[node name="Floor_3" type="Node2D" parent="Floors" unique_id=1366972042]
-
-[node name="FruitBanana" parent="Floors/Floor_3" unique_id=1301579751 instance=ExtResource("7_7trcl")]
-position = Vector2(110, 72)
-
-[node name="FruitBanana2" parent="Floors/Floor_3" unique_id=920143281 instance=ExtResource("7_7trcl")]
-position = Vector2(156, 72)
-
-[node name="FruitBanana3" parent="Floors/Floor_3" unique_id=1912270560 instance=ExtResource("7_7trcl")]
-position = Vector2(110, 108)
-
-[node name="FruitBanana4" parent="Floors/Floor_3" unique_id=114946846 instance=ExtResource("7_7trcl")]
-position = Vector2(156, 108)
-
-[node name="Floor_4" type="Node2D" parent="Floors" unique_id=1264467970]
-
-[node name="FruitBanana" parent="Floors/Floor_4" unique_id=390963747 instance=ExtResource("7_7trcl")]
-position = Vector2(231, -102)
-
-[node name="FruitBanana2" parent="Floors/Floor_4" unique_id=187016113 instance=ExtResource("7_7trcl")]
-position = Vector2(203, -102)
-
-[node name="FruitBanana3" parent="Floors/Floor_4" unique_id=529347693 instance=ExtResource("7_7trcl")]
-position = Vector2(177, -102)
-
-[node name="FruitBanana4" parent="Floors/Floor_4" unique_id=1046045948 instance=ExtResource("7_7trcl")]
-position = Vector2(33, -227)
-
-[node name="FruitBanana5" parent="Floors/Floor_4" unique_id=2116597823 instance=ExtResource("7_7trcl")]
-position = Vector2(73, -227)
-
-[node name="FruitBanana6" parent="Floors/Floor_4" unique_id=106160178 instance=ExtResource("7_7trcl")]
-position = Vector2(105, -227)
-
-[node name="Floor_5" type="Node2D" parent="Floors" unique_id=864930369]
-
-[node name="Spikes" parent="Floors/Floor_5" unique_id=430225069 instance=ExtResource("8_nds08")]
-position = Vector2(80, -370)
-rotation = -1.5707964
-scale = Vector2(2, 2)
-
-[node name="Spikes2" parent="Floors/Floor_5" unique_id=1388055979 instance=ExtResource("8_nds08")]
-position = Vector2(193, -367)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-
-[node name="Path2D3" type="Path2D" parent="Floors/Floor_5" unique_id=498100678]
-position = Vector2(0, 60)
-curve = SubResource("Curve2D_5l446")
-
-[node name="CustomPathFollow" parent="Floors/Floor_5/Path2D3" unique_id=402695244 instance=ExtResource("9_5l446")]
-position = Vector2(51, -575)
-move_speed = 0.45
-
-[node name="FruitBanana" parent="Floors/Floor_5/Path2D3/CustomPathFollow" unique_id=1702560587 instance=ExtResource("7_7trcl")]
-
-[node name="Floor_6" type="Node2D" parent="Floors" unique_id=520859245]
-position = Vector2(129, -698)
-
-[node name="MovingRock" parent="Floors/Floor_6" unique_id=139595143 instance=ExtResource("12_kw6cb")]
-position = Vector2(-82, -87)
-scale = Vector2(2, 2)
-move_distance = 96.0
-
-[node name="MovingRock2" parent="Floors/Floor_6" unique_id=1390481122 instance=ExtResource("12_kw6cb")]
-position = Vector2(95, -87)
-scale = Vector2(2, 2)
-move_distance = 96.0
-
-[node name="Floor_7" type="Node2D" parent="Floors" unique_id=1354987946]
-position = Vector2(129, -951)
-
-[node name="Checkpoint" parent="Floors/Floor_7" unique_id=890875312 instance=ExtResource("13_ii7ab")]
-position = Vector2(0, 55)
-
-[node name="Floor_8" type="Node2D" parent="Floors" unique_id=345322163]
-position = Vector2(134, -1111)
-
-[node name="SpikeBall" parent="Floors/Floor_8" unique_id=378150847 instance=ExtResource("14_hxkax")]
-position = Vector2(0, -99)
-
-[node name="FruitBanana" parent="Floors/Floor_8" unique_id=1983453836 instance=ExtResource("7_7trcl")]
-position = Vector2(-54, 0)
-
-[node name="FruitBanana2" parent="Floors/Floor_8" unique_id=1495477664 instance=ExtResource("7_7trcl")]
-position = Vector2(-54, -32)
-
-[node name="FruitBanana3" parent="Floors/Floor_8" unique_id=50141365 instance=ExtResource("7_7trcl")]
-position = Vector2(57, 0)
-
-[node name="FruitBanana4" parent="Floors/Floor_8" unique_id=442171703 instance=ExtResource("7_7trcl")]
-position = Vector2(57, -32)
-
-[node name="Floor_9" type="Node2D" parent="Floors" unique_id=1535514969]
-position = Vector2(134, -1329)
-
-[node name="EnemyRino" parent="Floors/Floor_9" unique_id=420838828 instance=ExtResource("15_7rk1p")]
-position = Vector2(-96, 96)
-collision_mask = 6
-
-[node name="FruitBanana" parent="Floors/Floor_9" unique_id=1100929498 instance=ExtResource("7_7trcl")]
-position = Vector2(-30, -30)
-
-[node name="FruitBanana2" parent="Floors/Floor_9" unique_id=1199451898 instance=ExtResource("7_7trcl")]
-position = Vector2(-30, -30)
-
-[node name="FruitBanana3" parent="Floors/Floor_9" unique_id=1890907188 instance=ExtResource("7_7trcl")]
-position = Vector2(4, -30)
-
-[node name="FruitBanana4" parent="Floors/Floor_9" unique_id=1868230334 instance=ExtResource("7_7trcl")]
-position = Vector2(38, -30)
-
-[node name="FruitBanana5" parent="Floors/Floor_9" unique_id=2091803182 instance=ExtResource("7_7trcl")]
-position = Vector2(85, 3)
-
-[node name="FruitBanana6" parent="Floors/Floor_9" unique_id=1518581393 instance=ExtResource("7_7trcl")]
-position = Vector2(-81, 3)
-
-[node name="Floor_10" type="Node2D" parent="Floors" unique_id=149788852]
-position = Vector2(140, -1619)
-
-[node name="Spikes" parent="Floors/Floor_10" unique_id=1004202413 instance=ExtResource("8_nds08")]
-position = Vector2(-124, 100)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-
-[node name="Spikes2" parent="Floors/Floor_10" unique_id=1553453294 instance=ExtResource("8_nds08")]
-position = Vector2(-123, 69)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-
-[node name="Spikes3" parent="Floors/Floor_10" unique_id=1384141474 instance=ExtResource("8_nds08")]
-position = Vector2(116, 98)
-rotation = -1.5707964
-scale = Vector2(2, 2)
-
-[node name="Spikes4" parent="Floors/Floor_10" unique_id=1691208500 instance=ExtResource("8_nds08")]
-position = Vector2(117, 67)
-rotation = -1.5707964
-scale = Vector2(2, 2)
-
-[node name="EnemyPig" parent="Floors/Floor_10" unique_id=1665409468 instance=ExtResource("16_jbxxx")]
-position = Vector2(-45, 4)
-collision_mask = 6
-
-[node name="EnemyPig2" parent="Floors/Floor_10" unique_id=1273318346 instance=ExtResource("16_jbxxx")]
-position = Vector2(-45, -124)
-collision_mask = 6
-move_speed = 60
-
-[node name="EnemyChameleon" parent="Floors/Floor_10" unique_id=1386541326 instance=ExtResource("25_tawbq")]
-position = Vector2(32, 96)
-collision_mask = 6
-
-[node name="EnemyPlant" parent="Floors/Floor_10" unique_id=640388593 instance=ExtResource("26_5ub58")]
-position = Vector2(101, -43)
-collision_mask = 6
-
-[node name="Floor_11" type="Node2D" parent="Floors" unique_id=6001495]
-position = Vector2(140, -1876)
-
 [node name="SpawnPos" type="Marker2D" parent="." unique_id=2121909734]
 position = Vector2(131, 389)
 
@@ -1349,7 +1140,6 @@ position = Vector2(135, -942)
 
 [node name="GameWonPanel" type="Panel" parent="GameUI" unique_id=1030291754]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(200, 150)
 anchors_preset = 8
 anchor_left = 0.5
@@ -1357,9 +1147,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = -75.0
+offset_top = -218.0
 offset_right = 100.0
-offset_bottom = 75.0
+offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2kyel")
@@ -1369,13 +1159,154 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -76.0
-offset_top = 21.0
-offset_right = 76.0
-offset_bottom = 50.0
+offset_left = -62.0
+offset_top = 117.0
+offset_right = 90.0
+offset_bottom = 146.0
 grow_horizontal = 2
-text = "GAME WON"
+text = "What an adventure !!"
 label_settings = SubResource("LabelSettings_hy3pq")
+
+[node name="Label2" type="Label" parent="GameUI/GameWonPanel" unique_id=82004811]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 129.0
+offset_right = 98.0
+offset_bottom = 158.0
+grow_horizontal = 2
+text = "Thank you for playing"
+label_settings = SubResource("LabelSettings_hy3pq")
+
+[node name="Label3" type="Label" parent="GameUI/GameWonPanel" unique_id=1057813712]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 141.0
+offset_right = 89.5
+offset_bottom = 172.0
+grow_horizontal = 2
+text = "We would appreciate 
+your feedback"
+label_settings = SubResource("LabelSettings_gnbld")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="GameUI/GameWonPanel" unique_id=401358662]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 171.0
+offset_right = 89.5
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "Game Credits:
+Game Devs:"
+label_settings = SubResource("LabelSettings_gnbld")
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="GameUI/GameWonPanel" unique_id=1647694290]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 200.0
+offset_right = 89.5
+offset_bottom = 248.0
+grow_horizontal = 2
+text = "      MIKE          JONAXEL"
+label_settings = SubResource("LabelSettings_gnbld")
+
+[node name="Label6" type="Label" parent="GameUI/GameWonPanel" unique_id=1533769972]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 215.0
+offset_right = 89.5
+offset_bottom = 246.0
+grow_horizontal = 2
+text = "MUSIC AND SOUND DESIGN:
+"
+label_settings = SubResource("LabelSettings_gnbld")
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="GameUI/GameWonPanel" unique_id=190582120]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 228.0
+offset_right = 89.5
+offset_bottom = 276.0
+grow_horizontal = 2
+text = "Gogonsotl"
+label_settings = SubResource("LabelSettings_gnbld")
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="GameUI/GameWonPanel" unique_id=119036056]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 244.0
+offset_right = 89.5
+offset_bottom = 292.0
+grow_horizontal = 2
+text = "VOICE ACTRESS:"
+label_settings = SubResource("LabelSettings_gnbld")
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="GameUI/GameWonPanel" unique_id=1194618452]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 259.0
+offset_right = 89.5
+offset_bottom = 307.0
+grow_horizontal = 2
+text = "DANY"
+label_settings = SubResource("LabelSettings_gnbld")
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="GameUI/GameWonPanel" unique_id=1838761172]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 274.0
+offset_right = 89.5
+offset_bottom = 322.0
+grow_horizontal = 2
+text = "ASSETS AND SOUNDFX ON:"
+label_settings = SubResource("LabelSettings_gnbld")
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="GameUI/GameWonPanel" unique_id=984595086]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.5
+offset_top = 289.0
+offset_right = 97.5
+offset_bottom = 337.0
+grow_horizontal = 2
+text = "mikerayitagames.itch.io/junipers-adventure"
+label_settings = SubResource("LabelSettings_mmnmt")
+horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="GameUI/GameWonPanel" unique_id=277481855]
 custom_minimum_size = Vector2(150, 50)
@@ -1385,12 +1316,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -6.0
-offset_right = 75.0
-offset_bottom = 44.0
+offset_left = -55.0
+offset_top = 123.50003
+offset_right = 95.0
+offset_bottom = 173.50003
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.745, 0.745)
 theme_override_colors/font_color = Color(0.036556214, 0.03655638, 0.036556244, 1)
 theme_override_fonts/font = ExtResource("18_klkrs")
 theme_override_font_sizes/font_size = 40
