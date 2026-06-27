@@ -29,7 +29,7 @@ class_name Game
 @onready var health_coin_18: Area2D = $Levels/Level5/Node/healthCoin18
 
 var health_points: int = 10
-var points: int
+var points: int = 0
 var checkpoint_reached: bool
 var checkpoint_position: Vector2
 
@@ -42,6 +42,7 @@ func _ready() -> void:
 	EventManager.on_health_collected.connect(_on_health_collected)
 	EventManager.end_game.connect(_end_game)
 	health_points_label.text = str(health_points)
+	points_label.text = str(points)
 	
 func get_respawn_pos() -> Vector2:
 	if checkpoint_reached:
