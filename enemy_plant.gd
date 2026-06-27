@@ -5,7 +5,7 @@ class_name EnemyPlant
 @onready var shooting_hole: Marker2D = $ShootingHole
 @onready var shooting_direction: Marker2D = $ShootingDirection
 @onready var timer: Timer = $Timer
-@export var health: int = 5
+@export var health: int = 3
 @export var ball_damage = 2
 @export var touch_damage = 1
 @export var plant_bullet: PackedScene

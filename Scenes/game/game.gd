@@ -88,6 +88,7 @@ func _on_play_button_pressed() -> void:
 	SoundManager.play_music()
 
 func _end_game() -> void:
+	SoundManager.play_woo()
 	node.visible = true
 	end_checkpoint.monitoring = true
 	health_coin.monitoring = true

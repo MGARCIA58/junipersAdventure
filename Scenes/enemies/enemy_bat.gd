@@ -4,7 +4,7 @@ class_name EnemyBat
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 @export var path: CustomPathFollow
-@export var health: int = 3
+@export var health: int = 2
 @export var touch_damage = 2
 @export var player: Node2D
 @export var body_in_area = false

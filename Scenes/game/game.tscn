@@ -141,7 +141,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
-position = Vector2(204, 386)
+position = Vector2(204, 378)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0

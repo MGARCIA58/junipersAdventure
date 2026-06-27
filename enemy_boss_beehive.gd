@@ -18,6 +18,7 @@ var bottom_touched := false
 var body_in_area := false
 var hittable := true
 var current_state := BossState.IDLE
+var can_play := false
 
 enum BossState {
 	IDLE,
@@ -35,13 +36,15 @@ func set_state(new_state: BossState) -> void:
 	if current_state == BossState.DEAD:
 		return
 	current_state = new_state
-	SoundManager.stop_panal()
+	if can_play:
+		SoundManager.stop_panal()
 	match current_state:
 		BossState.IDLE:
 			anim_sprite.play("idle")
 		BossState.PROTECTED:
 			anim_sprite.play("protected")
-			SoundManager.play_panal()
+			if can_play:
+				SoundManager.play_panal()
 		BossState.HIT:
 			anim_sprite.play("hit")
 		BossState.DEAD:
@@ -64,7 +67,7 @@ func spawn_bees() -> void:
 		return
 	var bee: EnemyBee = enemy_bee.instantiate()
 	get_tree().current_scene.add_child(bee)
-	bee.health = 3
+	bee.health = 2
 	bee.global_position = shooting_hole.global_position
 	path.current_bee = bee
 	path.can_move = false
@@ -115,3 +118,11 @@ func hit_by_player(damage: int) -> void:
 		set_state(BossState.IDLE)
 	else:
 		set_state(BossState.PROTECTED)
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	can_play = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	can_play = false
