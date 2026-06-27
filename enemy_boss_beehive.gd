@@ -6,7 +6,7 @@ class_name EnemyBossBehive
 @onready var timer_spawn: Timer = %TimerSpawn
 @onready var timer_hittable: Timer = %TimerHittable
 @onready var enemy_area: Area2D = $EnemyArea
-@export var health: int = 30
+@export var health: int = 40
 @export var touch_damage = 3
 @export var enemy_bee: PackedScene
 @export var player: Node2D
@@ -62,6 +62,7 @@ func spawn_bees() -> void:
 		return
 	var bee: EnemyBee = enemy_bee.instantiate()
 	get_tree().current_scene.add_child(bee)
+	bee.health = 3
 	bee.global_position = shooting_hole.global_position
 	path.current_bee = bee
 	path.can_move = false
@@ -104,6 +105,8 @@ func hit_by_player(damage: int) -> void:
 		timer_spawn.stop()
 		timer_hittable.stop()
 		set_state(BossState.DEAD)
+		anim_sprite.rotation_degrees = 180
+		EventManager.end_game.emit()
 		await anim_sprite.animation_finished
 		return
 	if hittable:

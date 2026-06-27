@@ -964,86 +964,10 @@ rotation = 3.1415927
 position = Vector2(239, -61)
 rotation = 3.1415927
 
-[node name="Node" type="Node2D" parent="Levels/Level5" unique_id=358399470]
-unique_name_in_owner = true
-visible = false
+[node name="Node" type="Node" parent="Levels/Level5" unique_id=989367881]
 
 [node name="EndCheckpoint" parent="Levels/Level5/Node" unique_id=374497132 instance=ExtResource("17_2wwbv")]
-unique_name_in_owner = true
-position = Vector2(119, -390)
-monitoring = false
-
-[node name="healthCoin" parent="Levels/Level5/Node" unique_id=838256379 instance=ExtResource("15_aeitv")]
-position = Vector2(119, -464)
-monitoring = false
-
-[node name="healthCoin2" parent="Levels/Level5/Node" unique_id=1994346579 instance=ExtResource("15_aeitv")]
-position = Vector2(119, -364)
-monitoring = false
-
-[node name="healthCoin3" parent="Levels/Level5/Node" unique_id=813401856 instance=ExtResource("15_aeitv")]
-position = Vector2(168, -417)
-monitoring = false
-
-[node name="healthCoin4" parent="Levels/Level5/Node" unique_id=1902088819 instance=ExtResource("15_aeitv")]
-position = Vector2(75, -417)
-monitoring = false
-
-[node name="healthCoin5" parent="Levels/Level5/Node" unique_id=174306271 instance=ExtResource("15_aeitv")]
-position = Vector2(92, -447)
-monitoring = false
-
-[node name="healthCoin6" parent="Levels/Level5/Node" unique_id=813186662 instance=ExtResource("15_aeitv")]
-position = Vector2(150, -447)
-monitoring = false
-
-[node name="healthCoin7" parent="Levels/Level5/Node" unique_id=967314027 instance=ExtResource("15_aeitv")]
-position = Vector2(150, -381)
-monitoring = false
-
-[node name="healthCoin8" parent="Levels/Level5/Node" unique_id=2091175650 instance=ExtResource("15_aeitv")]
-position = Vector2(87, -381)
-monitoring = false
-
-[node name="healthCoin9" parent="Levels/Level5/Node" unique_id=676179185 instance=ExtResource("15_aeitv")]
-position = Vector2(27, -391)
-monitoring = false
-
-[node name="healthCoin10" parent="Levels/Level5/Node" unique_id=248507214 instance=ExtResource("15_aeitv")]
-position = Vector2(27, -417)
-monitoring = false
-
-[node name="healthCoin11" parent="Levels/Level5/Node" unique_id=2140898659 instance=ExtResource("15_aeitv")]
-position = Vector2(27, -449)
-monitoring = false
-
-[node name="healthCoin12" parent="Levels/Level5/Node" unique_id=1307199950 instance=ExtResource("15_aeitv")]
-position = Vector2(27, -477)
-monitoring = false
-
-[node name="healthCoin13" parent="Levels/Level5/Node" unique_id=2139046765 instance=ExtResource("15_aeitv")]
-position = Vector2(27, -360)
-monitoring = false
-
-[node name="healthCoin14" parent="Levels/Level5/Node" unique_id=1791179252 instance=ExtResource("15_aeitv")]
-position = Vector2(208, -391)
-monitoring = false
-
-[node name="healthCoin15" parent="Levels/Level5/Node" unique_id=1035391366 instance=ExtResource("15_aeitv")]
-position = Vector2(208, -417)
-monitoring = false
-
-[node name="healthCoin16" parent="Levels/Level5/Node" unique_id=202043113 instance=ExtResource("15_aeitv")]
-position = Vector2(208, -449)
-monitoring = false
-
-[node name="healthCoin17" parent="Levels/Level5/Node" unique_id=1348406898 instance=ExtResource("15_aeitv")]
-position = Vector2(208, -477)
-monitoring = false
-
-[node name="healthCoin18" parent="Levels/Level5/Node" unique_id=282176351 instance=ExtResource("15_aeitv")]
-position = Vector2(208, -360)
-monitoring = false
+position = Vector2(138, -1745)
 
 [node name="Floors" type="Node2D" parent="." unique_id=1672830629]
 position = Vector2(433, 0)
