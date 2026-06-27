@@ -23,6 +23,7 @@ var coyote_time = 0.12
 var coyote_timer = 0.0
 
 func _ready() -> void:
+	add_to_group("player")	
 	jumps_left = max_jumps
 	
 func _physics_process(delta: float) -> void:
