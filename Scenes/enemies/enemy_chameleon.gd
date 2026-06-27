@@ -15,6 +15,7 @@ var bottom_touched := false
 var attacking := false
 var hit_player  := false
 var hitted := false
+var can_play := false
 
 func _ready() -> void:
 	add_to_group("enemy")	
@@ -45,6 +46,8 @@ func _on_bottom_area_body_entered(body: Node2D) -> void:
 func attack_player() -> void:
 	if attacking:
 		return
+	if can_play:
+		SoundManager.play_chameleon_attacking()
 	attacking = true
 	hit_player = false
 	anim_sprite.play("attack")
@@ -81,3 +84,11 @@ func hit_by_player(damage: int) -> void:
 		defeated = true
 		queue_free()
 	hitted = false
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	can_play = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	can_play = false

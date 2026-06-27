@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://cvlp5dmqrsrs6" path="res://Scenes/enemies/enemy_plant.tscn" id="26_5ub58"]
 [ext_resource type="PackedScene" uid="uid://j12jir3jee6" path="res://Scenes/circles/yellow_circle.tscn" id="26_yl8fu"]
 [ext_resource type="PackedScene" uid="uid://b2te3cnulk7d0" path="res://Scenes/enemies/enemy_boss_beehive.tscn" id="28_tvnbm"]
+[ext_resource type="Texture2D" uid="uid://b3pop3lgmqwi4" path="res://LeapNight Assets/Sprites/Other/logo.png" id="30_aeitv"]
 [ext_resource type="Texture2D" uid="uid://bgr17re106q0d" path="res://LeapNight Assets/Sprites/Other/hearts.png" id="31_mmnmt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0b77"]
@@ -140,7 +141,7 @@ stretch_mode = 1
 
 [node name="Player" parent="." unique_id=354303938 instance=ExtResource("1_vcfng")]
 unique_name_in_owner = true
-position = Vector2(218, 380)
+position = Vector2(204, 386)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=471512036]
 limit_left = 0
@@ -1329,6 +1330,11 @@ theme_override_fonts/font = ExtResource("18_klkrs")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ai5tx")
 text = "Play"
+
+[node name="Sprite2D" type="Sprite2D" parent="GameUI/GameWonPanel" unique_id=66444871]
+position = Vector2(105, 62)
+scale = Vector2(0.29738563, 0.29738563)
+texture = ExtResource("30_aeitv")
 
 [node name="Control" type="Control" parent="GameUI" unique_id=2084840463]
 custom_minimum_size = Vector2(80, 50)

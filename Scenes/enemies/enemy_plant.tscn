@@ -235,6 +235,10 @@ position = Vector2(-16, -4)
 [node name="ShootingDirection" type="Marker2D" parent="." index="6" unique_id=1118979555]
 position = Vector2(-37, -4)
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="7" unique_id=1611345482]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="TopArea" to="." method="_on_top_area_body_entered"]
 [connection signal="body_entered" from="BottomArea" to="." method="_on_bottom_area_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

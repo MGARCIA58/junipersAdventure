@@ -59,6 +59,7 @@ func _on_player_damage(damage) -> void:
 	health_points_label.text = str(health_points)
 
 func _on_player_dead() -> void:
+	SoundManager.play_player_mocking()
 	player.player_dead()
 	await get_tree().create_timer(0.5).timeout
 	var tween := create_tween()
@@ -84,6 +85,7 @@ func _on_game_won() -> void:
 
 func _on_play_button_pressed() -> void:
 	get_tree().reload_current_scene()
+	SoundManager.play_music()
 
 func _end_game() -> void:
 	node.visible = true

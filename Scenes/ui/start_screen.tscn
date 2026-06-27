@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://7nm5qpvliua7" path="res://Scenes/game/bg.gdshader" id="1_u6vib"]
 [ext_resource type="Texture2D" uid="uid://bo1bhmbmeo8r1" path="res://LeapNight Assets/Sprites/Menu/Buttons/A.png" id="3_mr6l3"]
 [ext_resource type="Texture2D" uid="uid://b1iecymxi1k2e" path="res://LeapNight Assets/Sprites/Menu/Buttons/D.png" id="4_2if0h"]
+[ext_resource type="Texture2D" uid="uid://b3pop3lgmqwi4" path="res://LeapNight Assets/Sprites/Other/logo.png" id="4_csu2t"]
 [ext_resource type="Texture2D" uid="uid://dvyrsewsmmxlp" path="res://LeapNight Assets/Sprites/Menu/Buttons/MOUSEBUTTONRIGHT.png" id="5_mustv"]
 [ext_resource type="Texture2D" uid="uid://dbvhkv423cra7" path="res://LeapNight Assets/Sprites/Menu/Buttons/MOUSEBUTTONLEFT.png" id="6_jtk4k"]
 [ext_resource type="FontFile" uid="uid://daihrgaf846ud" path="res://LeapNight Assets/Fonts/upheavtt.ttf" id="7_mustv"]
@@ -54,6 +55,11 @@ grow_horizontal = 2
 custom_minimum_size = Vector2(0, 91.78)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_csu2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/Panel2" unique_id=274620782]
+position = Vector2(117, 47)
+scale = Vector2(0.25326794, 0.25326797)
+texture = ExtResource("4_csu2t")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1384037983]
 layout_mode = 2
@@ -124,8 +130,8 @@ texture = ExtResource("6_jtk4k")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=2006486777]
 layout_mode = 2
-text = "Interact with 
-something"
+size_flags_horizontal = 4
+text = "           Interact with something"
 
 [node name="Panel5" type="Panel" parent="Panel/VBoxContainer" unique_id=1405599871]
 custom_minimum_size = Vector2(0, 15)
@@ -197,4 +203,5 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 text = "Move Left"
 
+[connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer5/PlayButton" to="." method="_on_play_button_pressed"]

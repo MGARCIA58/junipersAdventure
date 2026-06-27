@@ -100,6 +100,7 @@ func jump() -> void:
 		change_direction(sign(wall_normal.x))
 	if !is_on_floor() and coyote_timer <= 0 and jumps_left == max_jumps:
 		return
+	SoundManager.play_player_jump()
 	velocity.y = -jump_force
 	jumps_left -= 1
 	coyote_timer = 0.0

@@ -35,11 +35,13 @@ func set_state(new_state: BossState) -> void:
 	if current_state == BossState.DEAD:
 		return
 	current_state = new_state
+	SoundManager.stop_panal()
 	match current_state:
 		BossState.IDLE:
 			anim_sprite.play("idle")
 		BossState.PROTECTED:
 			anim_sprite.play("protected")
+			SoundManager.play_panal()
 		BossState.HIT:
 			anim_sprite.play("hit")
 		BossState.DEAD:

@@ -16,6 +16,7 @@ var top_jumped := false
 var bottom_touched := false
 var body_in_area := false
 var hitted := false
+var can_play := false
 
 func _ready() -> void:
 	add_to_group("enemy")
@@ -40,6 +41,8 @@ func _on_bottom_area_body_entered(body: Node2D) -> void:
 	bottom_touched = false
 	
 func shoot() -> void:
+	if can_play:
+		SoundManager.play_plant_bullet()
 	var bullet = plant_bullet.instantiate()
 	bullet.ball_damage = ball_damage
 	get_tree().current_scene.add_child(bullet)
@@ -66,3 +69,11 @@ func hit_by_player(damage: int) -> void:
 		defeated = true
 		queue_free()
 	hitted = false
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	can_play = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	can_play = false

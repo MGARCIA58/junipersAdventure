@@ -9,7 +9,6 @@ stream_players = [NodePath("SFXStreams/AudioStreamPlayer"), NodePath("SFXStreams
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1981344021]
 stream = ExtResource("2_d2d0e")
-autoplay = true
 
 [node name="SFXStreams" type="Node" parent="." unique_id=93570546]
 

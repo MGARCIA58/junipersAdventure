@@ -64,6 +64,7 @@ func attack_player() -> void:
 		return
 	if attacking:
 		return
+	SoundManager.play_bat_attacking()
 	attacking = true
 	path.can_move = false
 	var start_position = global_position

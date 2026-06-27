@@ -76,6 +76,7 @@ func _on_shooting_area_body_exited(body: Node2D) -> void:
 func shoot_at_player() -> void:
 	if not body_in_area:
 		return
+	SoundManager.play_bee_attacking()
 	var bullet = bee_bullet.instantiate()
 	bullet.sting_damage = sting_damage
 	get_tree().current_scene.add_child(bullet)
